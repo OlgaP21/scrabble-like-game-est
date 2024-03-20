@@ -5,7 +5,7 @@ Programmi käivitamiseks peab olema arvutis paigaldatud Node.js ja kohalikku vee
 Programmi käivitamiseks on vaja:
 - laadida repositoorium alla;
 - käivitada serveri kood;
-- käivitada klieni kood.
+- käivitada kliendi kood.
 
 Serveri käivitamiseks on vaja:
 - avada käsurida kaustas 'scrabble-like-game-est-main/server':
