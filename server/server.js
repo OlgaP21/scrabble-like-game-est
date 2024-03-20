@@ -7,7 +7,7 @@ const axios = require('axios');
 const PORT = 8080;
 const app = express();
 
-var dictionaries = ['teemata'];
+var dictionaries = [];
 fs.readdirSync(path.resolve(__dirname, 'public/dictionaries')).forEach(file => {
     dictionaries.push(file);
 });
