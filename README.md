@@ -13,8 +13,8 @@ Serveri käivitamiseks on vaja:
   - käivitada käsk 'node server.js'.
 
 Kliendi käivitamiseks on vaja:
-- avada käsurida kaustas 'scrabble-like-game-est-main/klient':
-  - käivitada käsk 'python +m http.server';
+- avada käsurida kaustas 'scrabble-like-game-est-main/client':
+  - käivitada käsk 'python -m http.server';
   - avada veebileht aadressil http://localhost:8000/ .
 
 See avab veebilehitsejas Scrabble mängu.
