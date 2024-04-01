@@ -14,7 +14,7 @@ Serveri käivitamiseks on vaja:
 
 Kliendi käivitamiseks on vaja:
 - avada käsurida kaustas 'scrabble-like-game-est-main/client':
-  - käivitada käsk 'python -m http.server';
-  - avada veebileht aadressil http://localhost:8000/ .
+  - käivitada käsk 'python -m http.server 8081';
+  - avada veebileht aadressil http://localhost:8081/ .
 
 See avab veebilehitsejas Scrabble mängu.
