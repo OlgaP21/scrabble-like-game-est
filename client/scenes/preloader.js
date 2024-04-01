@@ -43,8 +43,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('?', 'blank.png');
 
         // scores
-        this.load.setPath(`${url}/scores/`)
-        //this.load.setPath('assets/scores');
+        this.load.setPath(`${url}/scores/`);
         this.load.image('1', '1.png');
         this.load.image('2', '2.png');
         this.load.image('3', '3.png');
@@ -59,12 +58,12 @@ export default class Preloader extends Phaser.Scene {
 
         // tiles
         this.load.setPath(`${url}/tiles/`);
-        //this.load.setPath('assets/tiles');
         this.load.image('white_tile', 'white_tile.png');
         this.load.image('red_tile', 'red_tile.png');
         this.load.image('blue_tile', 'blue_tile.png');
         this.load.image('pink_tile', 'pink_tile.png');
         this.load.image('lightblue_tile', 'lightblue_tile.png');
+        this.load.image('star', 'star.png');
     }
 
     create() {

@@ -49,6 +49,7 @@ app.post('/upload', async (req, res) => {
         var name = data.split('\n')[0];
         if (!dictionaryExists(filename)) {
             var content = checkDictionary(data);
+            if (content.length == 0) return;
             var filename = path.resolve(__dirname, 'public/dictionaries/' + name);
             dictionaries.push(name.split('.')[0]);
             fs.writeFileSync(filename, content);
@@ -60,7 +61,8 @@ async function checkWord(word) {
     var doc = encodeURIComponent(word);
     var url = `https://www.filosoft.ee/html_morf_et/html_morf.cgi?doc=${doc}`;
     await axios.get(url).then((response) => {
-        return !response.data.includes('####');
+        var result = !response.data.includes('####') && (response.data(includes('sg n')) || response.data.includes('pl n'));
+        return result;
     }).catch((error) => {
         console.log(error);
     });

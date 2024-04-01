@@ -138,7 +138,7 @@ function legalMove(word, row, col) {
     var newWords = findNewWords(word, row, col, transposed);
     var score = scoreMove(newWords);
     if (difficulty == 'Kerge') {
-        if (score < bestScore) {
+        if (verticalWords.length > 5 && horizontalWords.length > 5 && score < bestScore || score > 5) {
             move = [word, row, col, transposed];
             bestScore = score;
             createdWords = newWords;

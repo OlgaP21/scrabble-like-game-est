@@ -136,7 +136,7 @@ export default class GameBoard {
                 new Square(195, 285, 'white_tile'), 
                 new Square(225, 285, 'white_tile'), 
                 new Square(255, 285, 'white_tile'), 
-                new Square(285, 285, 'pink_tile'), 
+                new Square(285, 285, 'star'), 
                 new Square(315, 285, 'white_tile'), 
                 new Square(345, 285, 'white_tile'), 
                 new Square(375, 285, 'white_tile'), 

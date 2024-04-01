@@ -297,6 +297,24 @@ export default class Game extends Phaser.Scene {
     }
 
     endGame() {
+        if (this.playerRack.length > 0 && this.computerRack.length > 0) {
+            for (var lx in this.playerRack) {
+                this.playerScore -= scores[this.playerRack[lx]];
+            }
+            for (var lx in this.computerRack) {
+                this.computerScore -= scores[this.computerRack[lx]];
+            }
+        } else if (this.playerRack.length == 0) {
+            for (var lx in this.computerRack) {
+                this.playerScore += scores[this.computerRack[lx]];
+                this.computerScore -= scores[this.computerRack[lx]];
+            }
+        } else {
+            for (var lx in this.playerRack) {
+                this.playerScore -= scores[this.playerRack[lx]];
+                this.computerScore += scores[this.playerRack[lx]];
+            }
+        }
         CreateGameEndDialog(this)
             .setPosition(this.screenCenterX, this.screenCenterY)
             .layout()
