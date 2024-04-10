@@ -5,6 +5,9 @@ import GameOptions from "./scenes/gameOptions.js";
 import Rules from "./scenes/rules.js";
 import Options from "./scenes/options.js";
 
+/**
+ * Mängu konfiguratsioon
+ */
 const config = {
     type: Phaser.AUTO,
     width: 920,

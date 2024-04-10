@@ -1,12 +1,18 @@
+/**
+ * Link failidele ligipääsu saamiseks
+ */
 const url = 'http://localhost:8080';
 
+
+/**
+ * Klass, kus toimub mängu failide laadimine, misjärel käivitatakse peamenüü vaadet
+ */
 export default class Preloader extends Phaser.Scene {
     constructor() {
         super('Preloader');
     }
 
     preload() {
-        // letters
         this.load.setPath(`${url}/letters/`);
         this.load.image('a', 'a.png');
         this.load.image('b', 'b.png');
@@ -42,7 +48,6 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('y', 'y.png');
         this.load.image('?', 'blank.png');
 
-        // scores
         this.load.setPath(`${url}/scores/`);
         this.load.image('1', '1.png');
         this.load.image('2', '2.png');
@@ -56,7 +61,6 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('0', '0.png');
         this.load.image('10', '10.png');
 
-        // tiles
         this.load.setPath(`${url}/tiles/`);
         this.load.image('white_tile', 'white_tile.png');
         this.load.image('red_tile', 'red_tile.png');

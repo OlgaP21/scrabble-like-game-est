@@ -1,5 +1,12 @@
+/**
+ * Sõnastiku üles laadimise link
+ */
 const url = 'http://localhost:8080/upload';
 
+
+/**
+ * Kasutaja sõnastiku üles laadimise vaade
+ */
 export default class Options extends Phaser.Scene {
     constructor() {
         super('Options');
@@ -7,7 +14,7 @@ export default class Options extends Phaser.Scene {
 
     preload() {
         this.load.plugin('rexfilechooserplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexfilechooserplugin.min.js', true);
-        this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI')
+        this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
 
     create() {
@@ -46,7 +53,7 @@ export default class Options extends Phaser.Scene {
         /**
          * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/filechooser/
          * Live demos, Open file chooser dialog
-         * Kood on võetud aluseks ja kohandatud
+         * uploadFileButton - lisatud laetud faili kontrollid
          */
         this.uploadFileButton = this.add.text(screenCenterX, 535, 'Vali sõnastiku fail', style)
             .setPadding(10)
@@ -63,40 +70,35 @@ export default class Options extends Phaser.Scene {
                                     .layout()
                                     .modalPromise({
                                         manaulClose: true
-                                    })
-                                ;
+                                    });
                             } else if (!regex.test(!files[0].name)) {
                                 CreateDialog(scene, 'Faili nimi võib sisaldada ainult tähti')
                                     .setPosition(screenCenterX, screenCenterY)
                                     .layout()
                                     .modalPromise({
                                         manaulClose: true
-                                    })
-                                ;
+                                    });
                             } else if (files[0].name.length > 19) {
                                 CreateDialog(scene, 'Faili nimi on liiga pikk')
                                     .setPosition(screenCenterX, screenCenterY)
                                     .layout()
                                     .modalPromise({
                                         manaulClose: true
-                                    })
-                                ;
+                                    });
                             } else {
                                 uploadText.text = 'Laetud fail: ' + files[0].name;
                                 var file = files[0];
                                 var fileChooser = scene.add.rexFileChooser({ accept: '.txt' });
-                                fileChooser.loadFilePromise(files[0], 'text', 'theme')
-                                    .then(function (content) {
-                                        var data = files[0].name + '\n' + content;
-                                        fetch(url, {
-                                            body: data,
-                                            method: 'POST',
-                                            headers: {
-                                                'content-type': 'text/plain'
-                                            }
-                                        });
-                                    })
-                                ;
+                                fileChooser.loadFilePromise(files[0], 'text', 'theme').then(function (content) {
+                                    var data = files[0].name + '\n' + content;
+                                    fetch(url, {
+                                        body: data,
+                                        method: 'POST',
+                                        headers: {
+                                            'content-type': 'text/plain'
+                                        }
+                                    });
+                                });
                             }
                         } else {
                             CreateDialog(scene, 'Faili ei ole valitud')
@@ -104,23 +106,20 @@ export default class Options extends Phaser.Scene {
                                 .layout()
                                 .modalPromise({
                                     manaulClose: true
-                                })
-                            ;
+                                });
                         }
                     })
             })
             .on('pointerover', () => this.uploadFileButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.uploadFileButton.setStyle({ fill: '#ffffff'}))
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
 
         this.backToMainMenuButton = this.add.text(5, 5, 'Tagasi peamenüüsse', style)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', () => this.scene.start('MainMenu'))
             .on('pointerover', () => this.backToMainMenuButton.setStyle({ fill: '#ffd700' }))
-            .on('pointerout', () => this.backToMainMenuButton.setStyle({ fill: '#ffffff'}))
-        ;
+            .on('pointerout', () => this.backToMainMenuButton.setStyle({ fill: '#ffffff'}));
     }
 }
 
@@ -128,7 +127,7 @@ export default class Options extends Phaser.Scene {
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-dialog/
  * Live demos, Modal Dialog
- * Kood on võetud aluseks ja kohandatud
+ * CreateDialog, CreateLabel - muudetud stiili
  */
 var CreateDialog = function (scene, message) {
     var dialog = scene.rexUI.add.dialog({
@@ -152,7 +151,6 @@ var CreateDialog = function (scene, message) {
         .on('button.out', function (button, groupName, index, pointer, event) {
             button.getElement('text').setStyle({ fill: '#ffffff' })
         });
-
     return dialog;
 }
 

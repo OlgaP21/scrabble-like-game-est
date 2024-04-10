@@ -1,3 +1,6 @@
+/**
+ * Peamenüü vaade
+ */
 export default class MainMenu extends Phaser.Scene {
     constructor() {
         super('MainMenu');
@@ -24,8 +27,7 @@ export default class MainMenu extends Phaser.Scene {
             .on('pointerdown', () => this.scene.start('GameOptions'))
             .on('pointerover', () => this.playComputerButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.playComputerButton.setStyle({ fill: '#ffffff'}))
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
     
         this.rulesButton = this.add.text(screenCenterX, 320, 'Reeglid', style)
             .setPadding(10)
@@ -33,8 +35,7 @@ export default class MainMenu extends Phaser.Scene {
             .on('pointerdown', () => this.scene.start('Rules'))
             .on('pointerover', () => this.rulesButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.rulesButton.setStyle({ fill: '#ffffff'}))
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
         
         this.optionsButton = this.add.text(screenCenterX, 385, 'Sõnastikud', style)
             .setPadding(10)
@@ -42,7 +43,6 @@ export default class MainMenu extends Phaser.Scene {
             .on('pointerdown', () => this.scene.start('Options'))
             .on('pointerover', () => this.optionsButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.optionsButton.setStyle({ fill: '#ffffff'}))
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
     }
 }

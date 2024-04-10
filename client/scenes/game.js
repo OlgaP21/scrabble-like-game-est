@@ -9,6 +9,9 @@ import { initBoard } from '../logic/board.mjs';
 import { initDictionary } from '../logic/dictionary.mjs';
 
 
+/**
+ * Mängu vaade
+ */
 export default class Game extends Phaser.Scene {
     constructor() {
         super('Game');
@@ -75,32 +78,28 @@ export default class Game extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => this.skipPlayerMove())
             .on('pointerover', () => this.skipButton.setStyle({ fill: '#ffd700' }))
-            .on('pointerout', () => this.skipButton.setStyle({ fill: '#ffffff'}))
-        ;
+            .on('pointerout', () => this.skipButton.setStyle({ fill: '#ffffff'}));
 
         this.changeLettersButton = this.add.text(264, 550, 'Vaheta tähed', this.buttonStyle)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', () => this.exchangePlayerLetters())
             .on('pointerover', () => this.changeLettersButton.setStyle({ fill: '#ffd700' }))
-            .on('pointerout', () => this.changeLettersButton.setStyle({ fill: '#ffffff'}))
-        ;
+            .on('pointerout', () => this.changeLettersButton.setStyle({ fill: '#ffffff'}));
 
         this.readyButton = this.add.text(435, 550, 'Valmis', this.buttonStyle)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', () => this.playerMove(scene))
             .on('pointerover', () => this.readyButton.setStyle({ fill: '#ffd700' }))
-            .on('pointerout', () => this.readyButton.setStyle({ fill: '#ffffff'}))
-        ;
+            .on('pointerout', () => this.readyButton.setStyle({ fill: '#ffffff'}));
 
         this.exitButton = this.add.text(685, 550, 'Lõpeta mäng', this.buttonStyle)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', () => this.scene.start('MainMenu'))
             .on('pointerover', () => this.exitButton.setStyle({ fill: '#ffd700' }))
-            .on('pointerout', () => this.exitButton.setStyle({ fill: '#ffffff'}))
-        ;
+            .on('pointerout', () => this.exitButton.setStyle({ fill: '#ffffff'}));
 
         this.input.on('dragstart', (pointer, gameObject) => {
             if (gameObject.data) {
@@ -131,12 +130,18 @@ export default class Game extends Phaser.Scene {
         this.showComputerRack();
     }
 
+    /**
+     * Funktsioon mängu initsialiseerimiseks
+     */
     initGame() {
         initBag();
         initBoard();
         initDictionary(this.theme);
     }
 
+    /**
+     * Funktsioon kasutaja käes olevate tähtede näitamiseks
+     */
     showPlayerRack() {
         for (var i = 0; i < playerRack.length; i++) {
             var letter = playerRack[i];
@@ -151,6 +156,9 @@ export default class Game extends Phaser.Scene {
         //this.physics.add.collider(this.playerRack);
     }
 
+    /**
+     * Funktsioon arvuti käes olevate klotside näitamiseks
+     */
     showComputerRack() {
         for (var i = 0; i < computerRack.length; i++) {
             var letter = this.physics.add.sprite(555, i*60+75, '?');
@@ -158,6 +166,9 @@ export default class Game extends Phaser.Scene {
         }
     }
 
+    /**
+     * Funktsioon mängija käigu sooritamiseks
+     */
     playerMove(scene) {
         if (letters.length < 7) this.changeLettersButton.input.enabled = false;
         try {
@@ -208,6 +219,9 @@ export default class Game extends Phaser.Scene {
         }
     }
 
+    /**
+     * Funktsioon mängija käigu vahele jätmiseks
+     */
     skipPlayerMove() {
         this.playerMoves.push(2);
         for (var i = 0; i < this.playerRack.length; i++) {
@@ -221,10 +235,16 @@ export default class Game extends Phaser.Scene {
         this.computerMove();
     }
 
+    /**
+     * Funktsioon mängija tähtede vahetamiseks
+     */
     exchangePlayerLetters() {
         var dialog = CreateChangeLettersDialog(this);
     }
 
+    /**
+     * Funktsioon arvuti käigu sooritamiseks
+     */
     computerMove() {
         if (letters.length < 7) this.changeLettersButton.input.enabled = false;
         var result, usedLetters, indexes, score, createdWords;
@@ -283,11 +303,17 @@ export default class Game extends Phaser.Scene {
         this.checkGameEnd();
     }
 
+    /**
+     * Funktsioon tehtud käikude info uuendamiseks
+     */
     updateInfoPanel(message) {
         this.infoPanel.getElement('panel').add(CreatePanelChild(this, message));
         this.infoPanel.layout();
     }
 
+    /**
+     * Funktsioon kontrollimiseks kas mängu peab lõpetama
+     */
     checkGameEnd() {
         if ((playerRack.length == 0 || computerRack.length == 0) && letters.length == 0) {
             this.endGame();
@@ -304,6 +330,9 @@ export default class Game extends Phaser.Scene {
         }
     }
 
+    /**
+     * Funktsioon mängu lõpetamiseks
+     */
     endGame() {
         if (this.playerRack.length > 0 && this.computerRack.length > 0) {
             for (var lx in this.playerRack) {
@@ -328,15 +357,14 @@ export default class Game extends Phaser.Scene {
             .layout()
             .modalPromise({
                 manaulClose: true
-            })
-        ;
+            });
     }
 }
 
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-scrollablepanel/?h=
  * Live demos, Scroll to child
- * Kood on võetud aluseks ja kohandatud
+ * CreateInfoPanel, CreatePanelChild - muudetud stiili
  */
 var CreateInfoPanel = function (scene) {
     var panel = scene.rexUI.add.scrollablePanel({
@@ -392,7 +420,7 @@ var CreatePanelChild = function (scene, message) {
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-dialog/
  * Live demos, Modal Dialog
- * Kood on võetud aluseks ja kohandatud
+ * CreateDialog - muudetud stiili
  */
 var CreateDialog = function (scene, message) {
     var dialog = scene.rexUI.add.dialog({
@@ -425,7 +453,7 @@ var CreateLabel = function (scene, text) {
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-confirmdialog/
  * Live demos, Radio-choices
- * Kood on võetud aluseks ja kohandatud
+ * CreateChangeLettersDialog - raadionuppude asemel märkeruudud, muudetud stiili, dialoogile lisatud valikud ja valikute kontrollid
  */
 var CreateChangeLettersDialog = function (scene) {
     var choicesType = 'x-checkboxes';
@@ -479,7 +507,6 @@ var CreateChangeLettersDialog = function (scene) {
         },
         align: { content: 'center', actions: 'center' }
     } 
-
     var dialog = scene.rexUI.add.confirmDialog(style)
         .setPosition(400, 300)
         .setDraggable('title')
@@ -495,10 +522,7 @@ var CreateChangeLettersDialog = function (scene) {
                 { text: playerRack[6], value: 6 }
             ],
             buttonA: 'Ok'
-        })
-        .layout()
-    ;
-
+        }).layout();
     dialog
         .modalPromise()
         .then(function (data) {
@@ -520,20 +544,17 @@ var CreateChangeLettersDialog = function (scene) {
                 scene.showPlayerRack();
                 scene.computerMove();
             }
-        })
-    ;
-
+        });
     scene.plugins.get('rexanchorplugin').add(dialog, {
         centerX: 'center'
     });
-
     return dialog;
 }
 
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-confirmdialog/
  * Live demos, Radio-choices
- * Kood on võetud aluseks ja kohandatud
+ * createChooseBlankDialog - tavaliste raadionuppude asemel wrap raadionuppud, muudetud stiili, dialoogile lisatud valikud
  */
 var createChooseBlankDialog = function (scene, index) {
     var choicesType = 'wrap-radio';
@@ -590,7 +611,6 @@ var createChooseBlankDialog = function (scene, index) {
         expand: { content: false },
         align: { content: 'center', actions: 'center' }
     } 
-
     var dialog = scene.rexUI.add.confirmDialog(style)
         .setPosition(400, 300)
         .setDraggable('title')
@@ -608,36 +628,28 @@ var createChooseBlankDialog = function (scene, index) {
                 { text: 'ä', value: 'Ä' }, { text: 'ö', value: 'Ö' }, { text: 'ü', value: 'Ü' }
             ],
             buttonA: 'Ok'
-        })
-        .layout()
-    ;
-
+        }).layout();
     dialog
         .setActionEnable(0, false)
         .once('choice.click', function () {
             this.setActionEnable(0);
-        })
-    ;
-
+        });
     dialog
         .modalPromise()
         .then(function (data) {
             scene.playerRack[index].data = data.value;
             scene.playerRack[index].list[0].setTexture(data.value.toLowerCase());
-        })
-    ;
-
+        });
     scene.plugins.get('rexanchorplugin').add(dialog, {
         centerX: 'center'
     });
-
     return dialog;
 }
 
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-dialog/
  * Live demos, Modal Dialog
- * Kood on võetud aluseks ja kohandatud
+ * CreateGameEndDialog - muudetud stiili
  */
 var CreateGameEndDialog = function(scene) {
     var message = `Mängija punktid: ${scene.playerScore} \nArvuti punktid: ${scene.computerScore}`;

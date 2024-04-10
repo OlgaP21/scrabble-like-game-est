@@ -1,5 +1,13 @@
-const url = 'http://localhost:8080/dictionaries/';
+/**
+ * Lingid failidele ligipääsu saamiseks
+ */
+const url = 'http://localhost:8080/';
+const themedUrl = 'http://localhost:8080/dictionaries/';
 
+
+/**
+ * Mängu seadete vaade
+ */
 export default class GameOptions extends Phaser.Scene {
     constructor() {
         super('GameOptions');
@@ -31,29 +39,6 @@ export default class GameOptions extends Phaser.Scene {
             stroke: '#000000'
         };
 
-        const style = {
-            label: {
-                space: { left: 10, right: 10, top: 10, bottom: 10 },
-                background: {
-                    color: 0x000000,
-                },
-                text: textStyle
-            },
-            button: {
-                space: { left: 10, right: 10, top: 10, bottom: 10 },
-                background: {
-                    color: 0x000000,
-                    'hover.strokeColor': 0xffd700,
-                    'hover.strokeWidth': 2,
-                },
-                text: textStyle
-            },
-            list: {
-                easeIn: 100,
-                easeOut: 250
-            }
-        };
-
         var difficulty = null;
         var theme = null;
 
@@ -68,8 +53,7 @@ export default class GameOptions extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => this.scene.start('MainMenu'))
             .on('pointerover', () => this.backToMainMenuButton.setStyle({ fill: '#ddf700' }))
-            .on('pointerout', () => this.backToMainMenuButton.setStyle({ fill: '#ffffff '}))
-        ;
+            .on('pointerout', () => this.backToMainMenuButton.setStyle({ fill: '#ffffff '}));
 
         this.add.text(screenCenterX, 125, 'Vali mängu keerukus', difficultyTextStyle).setStroke('#000000', 1.5).setOrigin(0.5);
 
@@ -80,8 +64,7 @@ export default class GameOptions extends Phaser.Scene {
                 scene.highlight(0);
                 scene.difficulty = 0;
             })
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
 
         this.mediumGameButton = this.add.text(screenCenterX, 220, 'Keskmine - Arvuti teeb juhuslikke käike', difficultyTextStyle)
             .setPadding(10)
@@ -90,8 +73,7 @@ export default class GameOptions extends Phaser.Scene {
                 scene.highlight(1);
                 scene.difficulty = 1;
             })
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
 
         this.hardGameButton = this.add.text(screenCenterX, 265, 'Raske - Arvuti teeb parimaid käike', difficultyTextStyle)
             .setPadding(10)
@@ -100,8 +82,7 @@ export default class GameOptions extends Phaser.Scene {
                 scene.highlight(2);
                 scene.difficulty = 2
             })
-            .setOrigin(0.5)
-        ;
+            .setOrigin(0.5);
 
         var themeDropDownList = CreateDropDownList(this, 280, 345, 200, this.themeOptions).layout();
 
@@ -134,12 +115,11 @@ export default class GameOptions extends Phaser.Scene {
             })
             .on('pointerover', () => this.playButton.setStyle({ fill: '#ddf700' }))
             .on('pointerout', () => this.playButton.setStyle({ fill: '#ffffff '}))
-            .setOrigin(0.5);
-        ;
+            .setOrigin(0.5);;
     }
 
     async getThemedOptions() {
-        var request = await fetch(url);
+        var request = await fetch(themedUrl);
         var data = await request.text();
         data = data.split(' ');
         for (var dx in data) {
@@ -164,10 +144,14 @@ export default class GameOptions extends Phaser.Scene {
 
     async showDictionaryContent(theme) {
         if (theme == 'teemata') {
-            this.dictionaryContent.setText('Tavaline mäng\n\nAinult\nbaasõnastik');
+            var content = 'Baasõnastik:\n\n';
+            var response = await fetch(`${url}dictionary.txt`);
+            var text = await response.text();
+            content += '- ' + text.split('\n').join('\n- ') + '\n';
+            this.dictionaryContent.setText(content);
         } else {
             var content = 'Temaatilised\nsõnad:\n\n';
-            var response = await fetch(url + theme + '.txt');
+            var response = await fetch(`${themedUrl}${theme}.txt`);
             var text = await response.text();
             content += '- ' + text.split('\n').join('\n- ');
             this.dictionaryContent.setText(content);
@@ -175,7 +159,11 @@ export default class GameOptions extends Phaser.Scene {
     }
 }
 
-
+/**
+ * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-textarea/
+ * Add text-area object
+ * CreateTextArea - muudetud stiili
+ */
 var CreateTextArea = function(scene) {
     return scene.rexUI.add.textArea({
         x: 630, y: 435,
@@ -202,7 +190,7 @@ var CreateTextArea = function(scene) {
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-scrollablepanel/
  * Live demos, Dropdown, scrollable list
- * Kood on võetud aluseks ja kohandatud
+ * CreateDropDownList, CreatePopupList, CreateButton, CreateTextObject - muudetud stiili
  */
 var CreateDropDownList = function (scene, x, y, menuHeight, options) {
     var label = scene.rexUI.add.label({
@@ -211,11 +199,9 @@ var CreateDropDownList = function (scene, x, y, menuHeight, options) {
         text: CreateTextObject(scene, '      Teema     ▼').setFixedSize(260, 25),
         space: { left: 10, right: 10, top: 10, bottom: 10 }
     }).setData('value', '');
-
     label.data.events.on('changedata-value', function (parent, value, previousValue) {
         label.text = value;
     });
-
     var list;
     label.onClick(function () {
         if (list) {
@@ -239,7 +225,6 @@ var CreateDropDownList = function (scene, x, y, menuHeight, options) {
 
 var CreatePopupList = function (scene, x, y, height, options, onClick) {
     var items = options.map(function (option) { return { label: option } });
-
     var buttonSizer = scene.rexUI.add.sizer({
         orientation: 'y'
     });
@@ -250,7 +235,6 @@ var CreatePopupList = function (scene, x, y, height, options, onClick) {
         )
     }
     buttonSizer.layout();
-
     var list = scene.rexUI.add.scrollablePanel({
         x: x, y: y, width: 260, height: Math.min(height, buttonSizer.height),
         panel: { child: buttonSizer },
@@ -268,7 +252,6 @@ var CreatePopupList = function (scene, x, y, height, options, onClick) {
         mouseWheelScroller: { speed: 0.25 },
         scroller: false
     }).setOrigin(0).layout();
-
     list
         .setChildrenInteractive({
             targets: [buttonSizer]
@@ -281,8 +264,7 @@ var CreatePopupList = function (scene, x, y, height, options, onClick) {
         })
         .on('child.out', function (child) {
             child.getElement('background').setStrokeStyle();
-        })
-    ;
+        });
     return list;
 }
 
@@ -310,7 +292,7 @@ var CreateTextObject = function (scene, text) {
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-dialog/
  * Live demos, Modal Dialog
- * Kood on võetud aluseks ja kohandatud
+ * CreateDialog, CreateLabel - muudetud stiili
  */
 var CreateDialog = function (scene, message) {
     var dialog = scene.rexUI.add.dialog({
