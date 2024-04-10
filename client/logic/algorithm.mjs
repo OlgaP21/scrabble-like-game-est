@@ -1,3 +1,15 @@
+/**
+ * Fail, kus sisalduvad arvuti käigu jaoks vajalikud muutujad ja funktsioonid
+ * 
+ * https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf
+ * Andrew W. Appel and Guy J. Jacobson, The World's Fastest Scrabble Program
+ * Funktsioonid leftPart, extendRight, legalMove põhinevad eelmainitud töös kirjeldatud algoritmil
+ * - leftPart - paremale pikendamine alustatakse mitte funktsioonile argumendina antud ankruruudul, vaid järgmisel ankruruudul
+ * - extendRight - ankruruudu ristkontrolli hulga kontroll on eemaldatud
+ * - legalMove - lisaks parima käigu salvestamisele, teostatakse funktsioonis kontrolli kas käik sobib leitud positsioonile
+ */
+
+
 import { scores, computerRack } from "./bag.mjs";
 import { board, multipliers, horizontalWords, verticalWords, transposed } from "./board.mjs";
 import { dictionary, themedDictionary, theme } from "./dictionary.mjs";
@@ -6,22 +18,38 @@ import { updateComputerRack, changeComputerLetters } from "./bag.mjs";
 import { transpose, findAnchorSquares, updateBoard } from "./board.mjs";
 
 
+/**
+ * move - parim leitud käik
+ * createdWords - käiguga tekitatud sõnad
+ * bestScore - parima käigu skoor
+ * firstMove - kas on esimene käik või tavaline
+ * difficulty - kasutaja valitud mängu keerukus
+ */
 var move;
 var createdWords;
 var bestScore;
 var firstMove = true;
 var difficulty;
 
+
+/**
+ * Funktsioon arvutiseisu tühistamiseks enne uut käiku
+ */
 function reset() {
     move = [];
     createdWords = [];
-    if (difficulty == 'Kerge') {
+    if (difficulty == 0) {
         bestScore = 1000;
     } else {
         bestScore = 0;
     }
 }
 
+/**
+ * Funktsioon esimese käigu sooritamiseks
+ * gameDifficulty - Mängu keerukus = Arvuti mängu tase
+ * Tagastab kasutatud tähed, tähtede asukohad mängulaual, käigu skoor, loodud sõnad, veateade
+ */
 export function makeFirstComputerMove(gameDifficulty) {
     difficulty = gameDifficulty;
     reset();
@@ -51,6 +79,11 @@ export function makeFirstComputerMove(gameDifficulty) {
     }
 }
 
+/**
+ * Funktsioon tavalise käigu sooritamiseks
+ * gameDifficulty - Mängu keerukus = Arvuti mängu tase
+ * Tagastab kasutatud tähed, tähtede asukohad mängulaual, käigu skoor, loodud sõnad, veateade
+ */
 export function makeComputerMove(gameDifficulty) {
     difficulty = gameDifficulty;
     reset();
@@ -88,6 +121,12 @@ export function makeComputerMove(gameDifficulty) {
     }
 }
 
+/**
+ * Funktsioon sõna vasaku poole leidmiseks
+ * partialWord - Osaline sõna
+ * node - Sõnastiku tipp
+ * Tagastab ankruruudu (selle positsioon ja vabade ruutude arv ankruruuduni)
+ */
 function leftPart(partialWord, node, anchor) {
     var [row, col, limit] = anchor;
     extendRight(partialWord, node, [row, col+1]);
@@ -106,6 +145,12 @@ function leftPart(partialWord, node, anchor) {
     }
 }
 
+/**
+ * Funktsioon sõna paremale pikendamiseks
+ * partialWord - Osaline sõna
+ * node - Sõnastiku tipp
+ * square - Ruut mängulaual (selle positsioon)
+ */
 function extendRight(partialWord, node, square) {
     var [row, col] = square;
     if (board[row][col] == '0' || row == 15 || col == 15) {
@@ -131,19 +176,25 @@ function extendRight(partialWord, node, square) {
     }
 }
 
+/**
+ * Funktsioon leitud käigu kontrollimiseks ning parima käigu salvestamiseks
+ * word - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ */
 function legalMove(word, row, col) {
     if (!checkMove(word.toLowerCase(), row, col)) return;
     if (!checkWord(word.toLowerCase(), row, col)) return;
     if (firstMove && !checkUsedCentralSquare(word, col)) return;
     var newWords = findNewWords(word, row, col, transposed);
     var score = scoreMove(newWords);
-    if (difficulty == 'Kerge') {
+    if (difficulty == 0) {
         if (verticalWords.length > 5 && horizontalWords.length > 5 && score < bestScore || score > 5) {
             move = [word, row, col, transposed];
             bestScore = score;
             createdWords = newWords;
         }
-    } else if (difficulty == 'Keskmine') {
+    } else if (difficulty == 1) {
         move = [word, row, col, transposed];
         bestScore = score;
         createdWords = newWords;
@@ -156,6 +207,13 @@ function legalMove(word, row, col) {
     }
 }
 
+/**
+ * Funktsioon käigu ajal tekitatud sõnade olemasolu kontrollimiseks sõnastikust
+ * possibleWord - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ * Tagastab sõna olemasolu sõnastikus (tavalises või temaatilises)
+ */
 function checkMove(possibleWord, row, col) {
     for (var j = col; j < col+possibleWord.length; j++) {
         var word = '';
@@ -192,6 +250,14 @@ function checkMove(possibleWord, row, col) {
     return true;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas leitud käik langeb juba mõne varem tehtud käiguga kokku
+ * word - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ * vertical - Mängulaua seis (transponeeritud või mitte)
+ * Tagastab käigu olemasolu varasemate käikude hulgas
+ */
 function checkWord(word, row, col, vertical=transposed) {
     var find;
     if (vertical) {
@@ -203,6 +269,12 @@ function checkWord(word, row, col, vertical=transposed) {
     return true;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas keskruut on kasutatud (vajalik esimese käigu jaoks)
+ * word - Leitud sõna
+ * col - Veeru number
+ * Tagastab tõeväärtuse kas keskruutu on käigu tegemiseks kasutatud
+ */
 function checkUsedCentralSquare(word, col) {
     for (var i = col; i < col+word.length; i++) {
         if (i == 7) return true;
@@ -210,6 +282,14 @@ function checkUsedCentralSquare(word, col) {
     return false;
 }
 
+/**
+ * Funktsioon käiguga tekitatud uute sõnade leidmiseks
+ * possibleWord - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ * vertical - Mängulaua seis (transponeeritud või mitte)
+ * Tagastab kõik käiguga tekitatud uued sõnad
+ */
 function findNewWords(possibleWord, row, col, vertical) {
     var boardCopy = [];
     for (var i = 0; i < 15; i++) {
@@ -265,6 +345,11 @@ function findNewWords(possibleWord, row, col, vertical) {
     return newWords;
 }
 
+/**
+ * Funktsioon käigu skoorimiseks
+ * newWords - Käiguga tekitatud sõnad
+ * Tagastab käigu skoori (siin ei arvestata 50 boonuspunkti)
+ */
 function scoreMove(newWords) {
     var totalScore = 0;
     for (var wx in newWords) {
@@ -299,6 +384,10 @@ function scoreMove(newWords) {
     return totalScore;
 }
 
+/**
+ * Funktsioon arvuti seisundi uuendamiseks
+ * Tagastab asutatud tähed, tähtede asukohad mängulaual
+ */
 function updateComputerState() {
     for (var wx in createdWords) {
         var [word, row, col, vertical] = createdWords[wx];

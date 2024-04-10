@@ -33,7 +33,14 @@ export default class Options extends Phaser.Scene {
         this.graphics.lineStyle(1, 0x000000);
         this.graphics.strokeRect(0, 0, 920, 650);
 
-        var uploadText = this.add.text(screenCenterX, 400, 'Laadi üles oma sõnastik', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 115, 'Siin saab oma temaatilise sõnastiku üles laadida', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 155, 'Laetava faili formaat - .txt', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 210, '   Failis võivad sõnad olla eraldatud kas \nkomaga, tühikuga või asuda igaüks omal real', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 265, 'Laetava faili maksimaalne suururs - 1 kilobait', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 315, 'Sõnad kontrollitakse Filosofti morfanalüsaatori abil', textStyle).setOrigin(0.5);
+        this.add.text(screenCenterX, 365, 'Ebasobivad sõnad eemaldatakse', textStyle).setOrigin(0.5);
+
+        var uploadText = this.add.text(screenCenterX, 460, '', textStyle).setOrigin(0.5);
         var scene = this;
 
         /**
@@ -41,7 +48,7 @@ export default class Options extends Phaser.Scene {
          * Live demos, Open file chooser dialog
          * Kood on võetud aluseks ja kohandatud
          */
-        this.uploadFileButton = this.add.text(screenCenterX, 475, 'Vali sõnastiku fail', style)
+        this.uploadFileButton = this.add.text(screenCenterX, 535, 'Vali sõnastiku fail', style)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', function() {
@@ -59,7 +66,13 @@ export default class Options extends Phaser.Scene {
                                     })
                                 ;
                             } else if (!regex.test(!files[0].name)) {
-                                uploadText.text = 'Faili nimi võib sisaldada ainult tähti';
+                                CreateDialog(scene, 'Faili nimi võib sisaldada ainult tähti')
+                                    .setPosition(screenCenterX, screenCenterY)
+                                    .layout()
+                                    .modalPromise({
+                                        manaulClose: true
+                                    })
+                                ;
                             } else if (files[0].name.length > 19) {
                                 CreateDialog(scene, 'Faili nimi on liiga pikk')
                                     .setPosition(screenCenterX, screenCenterY)

@@ -23,6 +23,14 @@ export default class GameOptions extends Phaser.Scene {
             stroke: '#ffffff'
         };
 
+        const difficultyTextStyle = {
+            fontSize: '25px',
+            backgroundColor: '#ffffff',
+            color: '#000000',
+            strokeThickness: 0.5,
+            stroke: '#000000'
+        };
+
         const style = {
             label: {
                 space: { left: 10, right: 10, top: 10, bottom: 10 },
@@ -46,9 +54,9 @@ export default class GameOptions extends Phaser.Scene {
             }
         };
 
-        var difficulty, theme;
+        var difficulty = null;
+        var theme = null;
 
-        var options = ['Kerge', 'Keskmine', 'Raske'];
         var scene = this;
 
         this.graphics = this.add.graphics();
@@ -63,32 +71,48 @@ export default class GameOptions extends Phaser.Scene {
             .on('pointerout', () => this.backToMainMenuButton.setStyle({ fill: '#ffffff '}))
         ;
 
-        /**
-         * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-simpledropdownlist/
-         * Live demos, Drop-down list
-         * Kood on võetud aluseks ja kohandatud
-         */
-        var difficultyDropDownList = this.rexUI.add.simpleDropDownList(style)
-            .resetDisplayContent('Keerukus ▼')
-            .setOptions(options)
-            .setPosition(screenCenterX, 145)
-            .layout()
-            .on('button.click', (difficultyDropDownList, listPanel, button, index, pointer, event) => {
-                difficultyDropDownList.setText(button.text)
-                difficulty = button.text;
+        this.add.text(screenCenterX, 125, 'Vali mängu keerukus', difficultyTextStyle).setStroke('#000000', 1.5).setOrigin(0.5);
+
+        this.easyGameButton = this.add.text(screenCenterX, 175, 'Kerge - Arvuti teeb väheskoorivaid käike', difficultyTextStyle)
+            .setPadding(10)
+            .setInteractive()
+            .on('pointerdown', () => {
+                scene.highlight(0);
+                scene.difficulty = 0;
             })
             .setOrigin(0.5)
         ;
 
-        var themeDropDownList = CreateDropDownList(this, screenCenterX, 345, 200, this.themeOptions).layout();
-    
+        this.mediumGameButton = this.add.text(screenCenterX, 220, 'Keskmine - Arvuti teeb juhuslikke käike', difficultyTextStyle)
+            .setPadding(10)
+            .setInteractive()
+            .on('pointerdown', () => {
+                scene.highlight(1);
+                scene.difficulty = 1;
+            })
+            .setOrigin(0.5)
+        ;
+
+        this.hardGameButton = this.add.text(screenCenterX, 265, 'Raske - Arvuti teeb parimaid käike', difficultyTextStyle)
+            .setPadding(10)
+            .setInteractive()
+            .on('pointerdown', () => {
+                scene.highlight(2);
+                scene.difficulty = 2
+            })
+            .setOrigin(0.5)
+        ;
+
+        var themeDropDownList = CreateDropDownList(this, 280, 345, 200, this.themeOptions).layout();
+
+        this.dictionaryContent = CreateTextArea(this).layout();
+
         this.playButton = this.add.text(screenCenterX, 600, 'Mängima!', textStyle)
             .setPadding(10)
             .setInteractive()
             .on('pointerdown', () => {
-                difficulty = difficultyDropDownList.text;
                 theme = themeDropDownList.text;
-                if (difficulty == 'Keerukus ▼') {
+                if (scene.difficulty == null) {
                     CreateDialog(scene, 'Keerukus ei ole valitud')
                         .setPosition(screenCenterX, screenCenterY)
                         .layout()
@@ -122,8 +146,58 @@ export default class GameOptions extends Phaser.Scene {
             this.themeOptions.push(data[dx]);
         }
     }
+
+    highlight(difficulty) {
+        var baseColor = '#000000';
+        var goldColor = '#ffd700';
+        this.easyGameButton.setStyle({ color: baseColor });
+        this.mediumGameButton.setStyle({ color: baseColor });
+        this.hardGameButton.setStyle({ color: baseColor });
+        if (difficulty == 0) {
+            this.easyGameButton.setStyle({ color: goldColor });
+        } else if (difficulty == 1) {
+            this.mediumGameButton.setStyle({ color: goldColor });
+        } else {
+            this.hardGameButton.setStyle({ color: goldColor });
+        }
+    }
+
+    async showDictionaryContent(theme) {
+        if (theme == 'teemata') {
+            this.dictionaryContent.setText('Tavaline mäng\n\nAinult\nbaasõnastik');
+        } else {
+            var content = 'Temaatilised\nsõnad:\n\n';
+            var response = await fetch(url + theme + '.txt');
+            var text = await response.text();
+            content += '- ' + text.split('\n').join('\n- ');
+            this.dictionaryContent.setText(content);
+        }
+    }
 }
 
+
+var CreateTextArea = function(scene) {
+    return scene.rexUI.add.textArea({
+        x: 630, y: 435,
+        width: 300, height: 230,
+        background: scene.rexUI.add.roundRectangle(0, 0, 0, 0, 13, 0x000000, 0.1),
+        text: scene.add.text(0, 0, '', {
+            fontSize: 24,
+            color: '#000000',
+            strokeThickness: 0.5,
+            stroke: '#000000',
+            padding: { left: 30, right: 10, bottom: 20, top: 20 },
+            lineSpacing: 10
+        }),
+        slider: {
+            track: scene.rexUI.add.roundRectangle(0, 0, 20, 0, 10, 0xb8b8b8),
+            thumb: scene.rexUI.add.roundRectangle(0, 0, 0, 0, 13, 0x757575)
+        },
+        mouseWheelScroller: { speed: 0.25 },
+        scroller: false,
+        content: ''
+    });
+}
 
 /**
  * https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-scrollablepanel/
@@ -151,6 +225,7 @@ var CreateDropDownList = function (scene, x, y, menuHeight, options) {
         var listY = label.bottom;
         list = CreatePopupList(scene, listX, listY, menuHeight, options, function (button) {
             label.setData('value', button.text);
+            scene.showDictionaryContent(button.text);
             list.scaleDownDestroy(100, 'y');
             list = undefined;
         });
@@ -225,7 +300,8 @@ var CreateTextObject = function (scene, text) {
         backgroundColor: '#000000',
         color: '#ffffff',
         strokeThickness: 0.75,
-        stroke: '#ffffff'
+        stroke: '#ffffff',
+        align: 'center'
     });
     return textObject;
 }

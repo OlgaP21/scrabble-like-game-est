@@ -94,6 +94,14 @@ export default class Game extends Phaser.Scene {
             .on('pointerout', () => this.readyButton.setStyle({ fill: '#ffffff'}))
         ;
 
+        this.exitButton = this.add.text(685, 550, 'Lõpeta mäng', this.buttonStyle)
+            .setPadding(10)
+            .setInteractive()
+            .on('pointerdown', () => this.scene.start('MainMenu'))
+            .on('pointerover', () => this.exitButton.setStyle({ fill: '#ffd700' }))
+            .on('pointerout', () => this.exitButton.setStyle({ fill: '#ffffff'}))
+        ;
+
         this.input.on('dragstart', (pointer, gameObject) => {
             if (gameObject.data) {
                 gameObject.data = '?';

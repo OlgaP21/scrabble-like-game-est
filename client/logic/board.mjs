@@ -1,9 +1,27 @@
+/**
+ * Fail, kus sisalduvad mängulauda puutuvad muutujad ja funktsioonid
+ * 
+ * https://en.wikipedia.org/wiki/Scrabble
+ * Scrabble. Game details
+ * multipliers - ametlik Scrabble'i mängulaua disain
+ */
+
+/**
+ * board - mängulaud
+ * nultiploiers - mängulaua preemiaruudud
+ * transposed - mängulaua seis
+ * verticalWords - käikudega tekitatud vertikaalsed sõnad
+ * horizontalWords - käikudega tekitatud horisontaalsed sõnad
+ */
 export var board;
 export var multipliers;
 export var transposed;
 export var verticalWords;
 export var horizontalWords;
 
+/**
+ * Funktsioon mängulaua initsialiseerimiseks
+ */
 export function initBoard() {
     board = [
     //    0    1    2    3    4    5    6    7    8    9    10   11   12   13   14
@@ -46,7 +64,9 @@ export function initBoard() {
     horizontalWords = [];
 }
 
-
+/**
+ * Funktisoon mängulaua transponeerimiseks
+ */
 export function transpose() {
     var transposedBoard = [];
     for (var row = 0; row < 15; row++) {
@@ -59,6 +79,10 @@ export function transpose() {
     transposed = !transposed;
 }
 
+/**
+ * Funktsioon ankruruutude leidmiseks (kasutatakse arvuti käigu tegemisel)
+ * Tagastab ankruruudud
+ */
 export function findAnchorSquares() {
     var anchorSquares = [];
     for (var row = 0; row < 15; row++) {
@@ -75,6 +99,10 @@ export function findAnchorSquares() {
     return anchorSquares;
 }
 
+/**
+ * Funktsioon ankruruutude leidmiseks (kasutatakse mängija käikude kontrollimiseks)
+ * Tagastab ankruruudud
+ */
 export function findAllAnchorSquares() {
     var anchorSquares = [];
     for (var row = 0; row < 15; row++) {
@@ -100,6 +128,10 @@ export function findAllAnchorSquares() {
     return anchorSquares;
 }
 
+/**
+ * Funktsioon mängulaua seisundi uuendamiseks
+ * move - Leitud käik
+ */
 export function updateBoard(move) {
     var [word, row, col, vertical] = move;
     for (var j = col; j < col+word.length; j++) {

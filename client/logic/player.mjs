@@ -1,3 +1,8 @@
+/**
+ * Fail, kus sisalduvad mängija sisendi kontrollimiseks vajalikud funktsioonid
+ */
+
+
 import { playerRack, scores } from './bag.mjs';
 import { board, multipliers, transposed, horizontalWords, verticalWords } from './board.mjs';
 import { dictionary, themedDictionary, theme } from "./dictionary.mjs";
@@ -6,13 +11,24 @@ import { updatePlayerRack } from './bag.mjs';
 import  { findAllAnchorSquares, updateBoard, } from './board.mjs';
 
 
+/**
+ * vertical - kas mängija pakutud sõna on vertikaalne
+ * horizontal - kas mängija pakutud sõna on horisontaalne
+ * move - mängija käik
+ * createdWords - käiguga tekitatud sõnad
+ * usedLetters - kasutatud tähed
+ * letterBoardIndexes - kasutatud tähtede indeksid
+ */
 var vertical;
 var horizontal;
 var move;
 var createdWords;
-var letterBoardIndexes;
 var usedLetters;
+var letterBoardIndexes;
 
+/**
+ * Funktsioon mängijaseisu tühistamiseks enne uut käiku
+ */
 export function reset() {
     vertical = true;
     horizontal = true;
@@ -22,6 +38,11 @@ export function reset() {
     usedLetters = [];
 }
 
+/**
+ * Funktsioon esimese käigu kontrollimiseks ja sooritamiseks
+ * playerLetters - Mängija tähed
+ * Tagastab kasutatud tähtede indeksid, käigu skoor, käiguga tekitatud sõnad
+ */
 export function makeFirstPlayerMove(playerLetters) {
     reset();
     var usedLettersIndexes = checkLettersOnBoard(playerLetters);
@@ -46,6 +67,11 @@ export function makeFirstPlayerMove(playerLetters) {
     }
 }
 
+/**
+ * Funktsioon tavalise käigu kontrollimiseks ja sooritamiseks
+ * playerLetters - Mangija tähed
+ * Tagastab kasutatud tähtede indeksid, käigu skoor, käiguga tekitatud sõnad, veateade
+ */
 export function makePlayerMove(playerLetters) {
     reset();
     var usedLettersIndexes = checkLettersOnBoard(playerLetters);
@@ -105,6 +131,11 @@ export function makePlayerMove(playerLetters) {
     }
 }
 
+/**
+ * Funktsioon kontrollimiseks kas mängija on tähed mängulauale asetanud
+ * playerLetters - Mängija tähed
+ * Tagastab mängulauale asetatud tähtede indeksid
+ */
 function checkLettersOnBoard(playerLetters) {
     var usedLettersIndexes = [];
     for (var lx in playerLetters) {
@@ -116,6 +147,12 @@ function checkLettersOnBoard(playerLetters) {
     return usedLettersIndexes;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas kõik tähed on ühele joonele asetatud (vertikaalselt või horisontaalselt)
+ * playerLetters - Mängija tähed
+ * usedLettersIndexes - Kasutatud tähtede indeksid
+ * Tagastab tõeväärtuse kas tähed asetsevad ühel sirgel joonel
+ */
 function checkLettersContinuous(playerLetters, usedLettersIndexes) {
     var x = playerLetters[usedLettersIndexes[0]].x;
     var y = playerLetters[usedLettersIndexes[0]].y;
@@ -132,6 +169,12 @@ function checkLettersContinuous(playerLetters, usedLettersIndexes) {
     return true;
 }
 
+/**
+ * Funktsioon mängija tähtedest tekitatud sõna leidmiseks
+ * playerLetters - Mängija tähed
+ * usedLettersIndexes - Kasutatud tähtede indeksid
+ * Tagastab leitud sõna
+ */
 function getPlayerMove(playerLetters, usedLettersIndexes) {
     var items = [];
     var word = '';
@@ -168,6 +211,10 @@ function getPlayerMove(playerLetters, usedLettersIndexes) {
     return word;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas keskruut on kasutatud (vajalik esimese käigu jaoks)
+ * Tagastab kas keskruutu on käigu tegemiseks kasutatud
+ */
 function checkUsedCentralSquare() {
     for (var lx in letterBoardIndexes) {
         var row = letterBoardIndexes[lx][0];
@@ -177,6 +224,10 @@ function checkUsedCentralSquare() {
     return false;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas tähed ei ole üksteise peale pandud
+ * Tagastab kas tähed ei ole üksteise peale pandud
+ */
 function checkMoveLettersInOrder() {
     if (vertical) {
         for (var lx in letterBoardIndexes) {
@@ -198,6 +249,10 @@ function checkMoveLettersInOrder() {
     return coordinates.size == letterBoardIndexes.length;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas sõnas on tühikuid (vajalik esimese käigu jaoks)
+ * Tagastab kas sõna on tühikuteta
+ */
 function checkFirstMoveWithoutBreaks() {
     for (var i = 1; i < letterBoardIndexes.length; i++) {
         if (letterBoardIndexes[i][1] - letterBoardIndexes[i-1][1] != 1) return false;
@@ -205,6 +260,13 @@ function checkFirstMoveWithoutBreaks() {
     return true;
 }
 
+/**
+ * Funktsioon käiguga tekitatud uute sõnade leidmiseks
+ * possibleWord - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ * vertical - Kas sõna on vertikaalne või horisontaalne
+ */
 function findNewWords(possibleWord, row, col, vertical) {
     var boardCopy = [];
     for (var i = 0; i < 15; i++) {
@@ -258,6 +320,14 @@ function findNewWords(possibleWord, row, col, vertical) {
     }
 }
 
+/**
+ * Funktsioon kontrollimiseks kas leitud käik langeb juba mõne varem tehtud käiguga kokku
+ * possibleWord - Leitud sõna
+ * row - Rea number
+ * col - Veeru number
+ * vertical - Kas sõna on vertikaalne või horisontaalne
+ * Tagastab käigu olemasolu varasemate käikude hulgas
+ */
 function checkWord(possibleWord, row, col, vertical) {
     var find;
     if (vertical) {
@@ -269,6 +339,10 @@ function checkWord(possibleWord, row, col, vertical) {
     return true;
 }
 
+/**
+ * Funktsioon käigu skoorimiseks
+ * Tagastab käigu skoori (siin ei arvestata 50 boonuspunkti)
+ */
 function scoreMove() {
     var totalScore = 0;
     for (var wx in createdWords) {
@@ -303,6 +377,10 @@ function scoreMove() {
     return totalScore;
 }
 
+/**
+ * Funktsioon mängija seisundi uuendamiseks
+ * Tagastab kasutatud tähed
+ */
 function updatePlayerState() {
     for (var wx in createdWords) {
         var [word, row, col, vertical] = createdWords[wx];
@@ -325,6 +403,12 @@ function updatePlayerState() {
     return usedLetters;
 }
 
+/**
+ * Funktsioon tähe mängulaua indeksite leidmiseks
+ * playerLetters - Mängija tähed
+ * usedLettersIndexes - Kasutatud tähtede indeksid
+ * Tagastab tähe positsioon mängulaual
+ */
 function getLetterBoardIndex(playerLetters, usedLettersIndexes) {
     var index = usedLettersIndexes[0];
     var row = (playerLetters[index].y - 60) / 30;
@@ -332,6 +416,12 @@ function getLetterBoardIndex(playerLetters, usedLettersIndexes) {
     return [row, col];
 }
 
+/**
+ * Funktsioon käiguga tekitatud uute sõnade leidmiseks
+ * letter - Täht
+ * index - Tähe positsioon mängulaual
+ * Tagastab kõik käiguga tekitatud uued sõnad
+ */
 function findCreatedWords(letter, index) {
     var [row, col] = index;
     var boardCopy = [];
@@ -391,12 +481,22 @@ function findCreatedWords(letter, index) {
     return newWords;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas mõni ankruruut on kasutatud (vajalik tavalise käigu jaoks)
+ * row - Rea number
+ * col - Veeru number
+ * Tagastab kas mõni ankruruut on käigu jaoks kasutatud
+ */
 function checkUsedAnchorSquare(row, col) {
     var anchorSquares = findAllAnchorSquares();
     var find = anchorSquares.find((elem) => elem[0]==row && elem[1]==col);
     return find ? true : false;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas mõni ankruruut on kasutatud (vajalik tavalise käigu jaoks)
+ * Tagastab kas mõni ankruruut on käigu jaoks kasutatud
+ */
 function checkUsedAnchorSquares() {
     var anchorSquares = findAllAnchorSquares();
     for (var lx in letterBoardIndexes) {
@@ -413,6 +513,10 @@ function checkUsedAnchorSquares() {
     return false;
 }
 
+/**
+ * Funktsioon kontrollimiseks kas sõnas on tühikuid
+ * Tagastab kas sõna on tühikuteta
+ */
 function checkMoveWithoutBreaks() {
     if (vertical) {
         for (var i = 1; i < letterBoardIndexes.length; i++) {
@@ -436,6 +540,11 @@ function checkMoveWithoutBreaks() {
     return true;
 }
 
+/**
+ * Funktsioon vertikaalse sõna leidmiseks
+ * possibleWord - Leitud sõna
+ * Tagastab sõna ja selle positsioon mängulaual
+ */
 function getVerticalMove(possibleWord) {
     var row = letterBoardIndexes[0][1];
     var col = letterBoardIndexes[0][0];
@@ -478,6 +587,11 @@ function getVerticalMove(possibleWord) {
     return [word, col, start];
 }
 
+/**
+ * Funktsioon horisontaalse sõna leidmiseks
+ * possibleWord - Leitud sõna
+ * Tagastab sõna ja selle positsioon mängulaual
+ */
 function getHorizontalMove(possibleWord) {
     var row = letterBoardIndexes[0][0];
     var col = letterBoardIndexes[0][1];

@@ -1,14 +1,26 @@
 /**
+ * Fail, kus sisalduvad tähtede kotti puutuvad muutujad ja funktsioonid
+ * 
  * https://en.wikipedia.org/wiki/Scrabble_letter_distributions
  * Scrabble letter distributions. Estonian
- * Tähtede jaotus ja väärtused on pärit eestikeelse Scrabble ametlikust väljaandest
+ * Tähtede jaotus ja väärtused on pärit eestikeelse Scrabble ametliku väljaande andmetest
  */
 
+
+/**
+ * letters - tähtede koti tähed
+ * scores - tähtede väärtused
+ * playerRack - mängija käes olevad tähed
+ * computerRack - arvuti käes olevad tähed 
+ */
 export var letters;
 export var scores;
 export var playerRack;
 export var computerRack;
 
+/**
+ * Funktsioonid tähtede koti ja mängijate tähtede initsialiseerimiseks
+ */
 export function initBag() {
     letters = [
         '?', '?',
@@ -46,12 +58,16 @@ export function initBag() {
         'f': 8,
         'š': 10, 'z': 10, 'ž': 10
     };
-    playerRack = ['a', 'b', 'd', 'e', 'g', 'f', 'j'];
-    computerRack = ['a', 'b', 'd', 'e', 'g', 'f', 'j'];
+    playerRack = [];
+    computerRack = [];
     updatePlayerRack([]);
     updateComputerRack([]);
 }
 
+/**
+ * Funktsioon kasutaja tähtede uuendamiseks
+ * usedLetters - Kasutatud tähed
+ */
 export function updatePlayerRack(usedLetters) {
     for (var lx in usedLetters) {
         if (usedLetters[lx] == usedLetters[lx].toUpperCase()) {
@@ -68,6 +84,10 @@ export function updatePlayerRack(usedLetters) {
     }
 }
 
+/**
+ * Funktsioon arvuti tähtede uuendamiseks
+ * usedLetters - Kasutatud tähed
+ */
 export function updateComputerRack(usedLetters) {
     for (var lx in usedLetters) {
         computerRack.splice(computerRack.indexOf(usedLetters[lx]), 1);
@@ -80,6 +100,10 @@ export function updateComputerRack(usedLetters) {
     }
 }
 
+/**
+ * Funktisoonid kasutaja valitud tähtede välja vahetamiseks
+ * exchangeLetters - Vahetatavad tähed
+ */
 export function changePlayerLetters(exchangeLetters) {
     if (letters.length < 7) throw 23;
     var oldLetters = [];
@@ -93,6 +117,9 @@ export function changePlayerLetters(exchangeLetters) {
     }
 }
 
+/**
+ * Funktsioon kõikide arvuti tähtede välja vahetamiseks
+ */
 export function changeComputerLetters() {
     if (letters.length < 7) throw 24;
     var oldLetters = [];

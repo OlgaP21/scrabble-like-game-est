@@ -1,3 +1,14 @@
+/**
+ * Funktsioon, kus sisalduvad mängulaua mängijale esitamiseks vajalikud klassid
+ * 
+ * https://en.wikipedia.org/wiki/Scrabble
+ * Scrabble. Game details
+ * GameBoard - ametlik Scrabble'i mängulaua disain
+ */
+
+/**
+ * Mängulaua ruut
+ */
 class Square {
     constructor(x, y, image) {
         this.x = x;
@@ -6,6 +17,9 @@ class Square {
     }
 }
 
+/**
+ * Mängulaud
+ */
 export default class GameBoard {
     constructor() {
         this.squares = [
