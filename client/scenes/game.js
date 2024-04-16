@@ -193,6 +193,7 @@ export default class Game extends Phaser.Scene {
                 if (usedLettersIndexes.includes(i.toString())) {
                     this.playerRack[i].input.draggable = false;
                 } else {
+                    this.playerRack[i].data = null;
                     this.playerRack[i].destroy(true);
                 }
             }
@@ -208,7 +209,7 @@ export default class Game extends Phaser.Scene {
             this.checkGameEnd();
             this.computerMove();
         } catch (err) {
-            console.log(err);
+            //console.log(err);
             CreateDialog(scene, err)
                 .setPosition(this.screenCenterX, this.screenCenterY)
                 .layout()
@@ -309,6 +310,7 @@ export default class Game extends Phaser.Scene {
     updateInfoPanel(message) {
         this.infoPanel.getElement('panel').add(CreatePanelChild(this, message));
         this.infoPanel.layout();
+        this.infoPanel.scrollToBottom();
     }
 
     /**

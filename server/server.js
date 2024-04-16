@@ -42,7 +42,7 @@ app.get('/dictionaries', (req, res) => {
     res.send(dictionaries.join(' '));
 });
 
-app.post('/upload', async (req, res) => {
+app.post('/upload', (req, res) => {
     req.on('data', async (chunk) => {
         var data = chunk.toString();
         var name = data.split('\n')[0];
@@ -56,10 +56,6 @@ app.post('/upload', async (req, res) => {
     });
 });
 
-async function checkWord(word) {
-    return await fetch(`https://www.filosoft.ee/html_morf_et/html_morf.cgi?doc=${encodeURIComponent(word)}`).then(res => res.text());
-}
-
 async function checkDictionary(data) {
     data = data.toLowerCase();
     var delimiters = [' ', '\n', ','];
@@ -70,7 +66,7 @@ async function checkDictionary(data) {
     var result = '';
     for (var i = 1; i < words.length; i++) {
         var word = words[i];
-        var wordInfo = await checkWord(word);
+        var wordInfo = await fetch(`https://www.filosoft.ee/html_morf_et/html_morf.cgi?doc=${encodeURIComponent(word)}`).then(res => res.text());;
         var legal = !wordInfo.includes('####') && (wordInfo.includes('sg&nbsp;n') || wordInfo.includes('pl&nbsp;n'));
         if (word.length < 16 && legal) {
             result += word + '\n';

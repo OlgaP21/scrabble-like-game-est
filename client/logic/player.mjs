@@ -112,7 +112,7 @@ export function makePlayerMove(playerLetters) {
         }
         if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
             throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
-    }
+        }
         findNewWords(word, row, col, vertical);
         var score = scoreMove();
         move = [word, row, col, vertical];
@@ -261,7 +261,7 @@ function checkFirstMoveWithoutBreaks() {
 }
 
 /**
- * Funktsioon käiguga tekitatud uute sõnade leidmiseks
+ * Funktsioon käiguga tekitatud uute sõnade leidmiseks (juhul kui mängija lisas mängulauale kaks ja enam tähte)
  * possibleWord - Leitud sõna
  * row - Rea number
  * col - Veeru number
@@ -287,6 +287,9 @@ function findNewWords(possibleWord, row, col, vertical) {
             if (boardLetter == '0' && word.length == 1) {
                 word = '';
             } else if (boardLetter == '0' && word.length > 1) {
+                if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                    throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+                }
                 if (checkWord(word, i, j-word.length, false)) {
                     createdWords.push([word, i, j-word.length, false]);
                 }
@@ -295,8 +298,13 @@ function findNewWords(possibleWord, row, col, vertical) {
                 word += boardLetter;
             }
         }
-        if (word.length > 1 && checkWord(word, i, 15-word.length, false)) {
-            createdWords.push([word, i, 15-word.length, false]);
+        if (word.length > 1) {
+            if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+            }
+            if (checkWord(word, i, 15-word.length, false)) {
+                createdWords.push([word, i, 15-word.length, false]);
+            }
         }
     }
     for (var j = 0; j < 15; j++) {
@@ -306,6 +314,9 @@ function findNewWords(possibleWord, row, col, vertical) {
             if (boardLetter == '0' && word.length == 1) {
                 word = '';
             } else if (boardLetter == '0' && word.length > 1) {
+                if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                    throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+                }
                 if (checkWord(word, j, i-word.length, true)) {
                     createdWords.push([word, j, i-word.length, true]);
                 }
@@ -314,8 +325,13 @@ function findNewWords(possibleWord, row, col, vertical) {
                 word += boardLetter;
             }
         }
-        if (word.length > 1 && checkWord(word, j, 15-word.length, true)) {
-            createdWords.push([word, j, 15-word.length, true]);
+        if (word.length > 1) {
+            if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+            }
+            if (checkWord(word, j, 15-word.length, true)) {
+                createdWords.push([word, j, 15-word.length, true]);
+            }
         }
     }
 }
@@ -417,7 +433,7 @@ function getLetterBoardIndex(playerLetters, usedLettersIndexes) {
 }
 
 /**
- * Funktsioon käiguga tekitatud uute sõnade leidmiseks
+ * Funktsioon käiguga tekitatud uute sõnade leidmiseks (juhul kui mängija lisas ühe tähe mängulauale)
  * letter - Täht
  * index - Tähe positsioon mängulaual
  * Tagastab kõik käiguga tekitatud uued sõnad
@@ -452,8 +468,13 @@ function findCreatedWords(letter, index) {
                 word += boardLetter;
             }
         }
-        if (word.length > 1 && checkWord(word, i, 15-word.length, false)) {
-            newWords.push([word, i, 15-word.length, false]);
+        if (word.length > 1) {
+            if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+            }
+            if (checkWord(word, i, 15-word.length, false)) {
+                newWords.push([word, i, 15-word.length, false]);
+            }
         }
     }
     for (var j = 0; j < 15; j++) {
@@ -474,8 +495,13 @@ function findCreatedWords(letter, index) {
                 word += boardLetter;
             }
         }
-        if (word.length > 1 && checkWord(word, j, 15-word.length, true)) {
-            newWords.push([word, j, 15-word.length, true]);
+        if (word.length > 1) {
+            if (theme && !themedDictionary.find(word.toLowerCase()) || !dictionary.find(word.toLowerCase())) {
+                throw `Sõna \'${word.toLowerCase()}\' ei ole sõnastikust leitud`;
+            }
+            if (checkWord(word, j, 15-word.length, true)) {
+                newWords.push([word, j, 15-word.length, true]);
+            }
         }
     }
     return newWords;

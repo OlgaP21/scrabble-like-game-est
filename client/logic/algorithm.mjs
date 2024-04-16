@@ -114,6 +114,7 @@ export function makeComputerMove(gameDifficulty) {
             }
         }
     } finally {
+        if (board[7][7] != 0) firstMove = false;
         return {
             value: [usedLetters, indexes, bestScore, createdWords],
             error: err

@@ -216,8 +216,10 @@ var CreateDropDownList = function (scene, x, y, menuHeight, options) {
             list = undefined;
         });
         list.onClickOutside(function () {
-            list.scaleDownDestroy(100, 'y');
-            list = undefined;
+            if (list != undefined) {
+                list.scaleDownDestroy(100, 'y');
+                list = undefined;
+            }
         });
     });
     return label;
