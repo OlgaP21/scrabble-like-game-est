@@ -362,6 +362,9 @@ export default class Game extends Phaser.Scene {
             });
     }
 
+    /**
+     * Funktsioon mängu käigus peamenüüsse väljumiseks
+     */
     exitToMainMenu() {
         for (var px in this.playerRack) {
             this.playerRack[px].data = null;
