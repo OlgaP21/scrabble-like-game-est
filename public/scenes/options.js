@@ -97,6 +97,13 @@ export default class Options extends Phaser.Scene {
                                         headers: {
                                             'content-type': 'text/plain'
                                         }
+                                    }).then((result) => {
+                                        result.text().then((message) => {
+                                            uploadText.text = message;
+                                        });
+                                        setTimeout(() => {
+                                            location.reload(true);
+                                        }, 2500);
                                     });
                                 });
                             }

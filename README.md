@@ -8,12 +8,12 @@ Programmi käivitamiseks on vaja:
 - käivitada kliendi kood.
 
 Serveri käivitamiseks on vaja:
-- avada käsurida kaustas 'scrabble-like-game-est-main/server':
+- avada käsurida kaustas 'scrabble-like-game-est-main':
   - käivitada käsk 'npm install';
   - käivitada käsk 'node server.js'.
 
-Kliendi käivitamiseks on vaja:
-- avada käsurida kaustas 'scrabble-like-game-est-main/client':
+Mängu käivitamiseks on vaja:
+- avada käsurida kaustas 'scrabble-like-game-est-main/public':
   - käivitada käsk 'python -m http.server 8081';
   - avada veebileht aadressil http://localhost:8081/ .
 

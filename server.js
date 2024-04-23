@@ -52,6 +52,9 @@ app.post('/upload', (req, res) => {
             var filename = path.resolve(__dirname, 'public/dictionaries/' + name);
             dictionaries.push(name.split('.')[0]);
             fs.writeFileSync(filename, content);
+            res.send("Sõnastik laetud. Lehte värskendatakse automaatselt");
+        } else {
+            res.send(`Samanimeline fail juba eksisteerib`);
         }
     });
 });
