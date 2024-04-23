@@ -97,7 +97,7 @@ export default class Game extends Phaser.Scene {
         this.exitButton = this.add.text(685, 550, 'Lõpeta mäng', this.buttonStyle)
             .setPadding(10)
             .setInteractive()
-            .on('pointerdown', () => this.scene.start('MainMenu'))
+            .on('pointerdown', () => this.exitToMainMenu())
             .on('pointerover', () => this.exitButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.exitButton.setStyle({ fill: '#ffffff'}));
 
@@ -360,6 +360,13 @@ export default class Game extends Phaser.Scene {
             .modalPromise({
                 manaulClose: true
             });
+    }
+
+    exitToMainMenu() {
+        for (var px in this.playerRack) {
+            this.playerRack[px].data = null;
+        }
+        this.scene.start('MainMenu');
     }
 }
 
