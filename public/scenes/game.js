@@ -15,13 +15,6 @@ import { initDictionary } from '../logic/dictionary.mjs';
 export default class Game extends Phaser.Scene {
     constructor() {
         super('Game');
-        this.playerScore = 0;
-        this.computerScore = 0;
-
-        this.playerRack = [];
-        this.computerRack = [];
-
-        this.firstMove = true;
     }
 
     init (data) {
@@ -137,6 +130,11 @@ export default class Game extends Phaser.Scene {
         initBag();
         initBoard();
         initDictionary(this.theme);
+        this.playerScore = 0;
+        this.computerScore = 0;
+        this.playerRack = [];
+        this.computerRack = [];
+        this.firstMove = true;
     }
 
     /**
@@ -170,7 +168,6 @@ export default class Game extends Phaser.Scene {
      * Funktsioon mängija käigu sooritamiseks
      */
     playerMove(scene) {
-        if (letters.length < 7) this.changeLettersButton.input.enabled = false;
         try {
             var result, usedLettersIndexes, score, createdWords;
             if (this.firstMove) {
@@ -218,6 +215,7 @@ export default class Game extends Phaser.Scene {
                 })
             ;
         }
+        if (letters.length < 7) this.changeLettersButton.input.enabled = false;
     }
 
     /**
@@ -247,7 +245,6 @@ export default class Game extends Phaser.Scene {
      * Funktsioon arvuti käigu sooritamiseks
      */
     computerMove() {
-        if (letters.length < 7) this.changeLettersButton.input.enabled = false;
         var result, usedLetters, indexes, score, createdWords;
         if (this.firstMove) {
             result = makeFirstComputerMove(this.difficulty);
@@ -302,6 +299,7 @@ export default class Game extends Phaser.Scene {
         this.computerRack = [];
         this.showComputerRack();
         this.checkGameEnd();
+        if (letters.length < 7) this.changeLettersButton.input.enabled = false;
     }
 
     /**
@@ -336,22 +334,22 @@ export default class Game extends Phaser.Scene {
      * Funktsioon mängu lõpetamiseks
      */
     endGame() {
-        if (this.playerRack.length > 0 && this.computerRack.length > 0) {
-            for (var lx in this.playerRack) {
-                this.playerScore -= scores[this.playerRack[lx]];
+        if (playerRack.length > 0 && computerRack.length > 0) {
+            for (var lx in playerRack) {
+                this.playerScore -= scores[playerRack[lx]];
             }
-            for (var lx in this.computerRack) {
-                this.computerScore -= scores[this.computerRack[lx]];
+            for (var lx in computerRack) {
+                this.computerScore -= scores[computerRack[lx]];
             }
-        } else if (this.playerRack.length == 0) {
-            for (var lx in this.computerRack) {
-                this.playerScore += scores[this.computerRack[lx]];
-                this.computerScore -= scores[this.computerRack[lx]];
+        } else if (playerRack.length == 0) {
+            for (var lx in computerRack) {
+                this.playerScore += scores[computerRack[lx]];
+                this.computerScore -= scores[computerRack[lx]];
             }
         } else {
-            for (var lx in this.playerRack) {
-                this.playerScore -= scores[this.playerRack[lx]];
-                this.computerScore += scores[this.playerRack[lx]];
+            for (var lx in playerRack) {
+                this.playerScore -= scores[playerRack[lx]];
+                this.computerScore += scores[playerRack[lx]];
             }
         }
         CreateGameEndDialog(this)

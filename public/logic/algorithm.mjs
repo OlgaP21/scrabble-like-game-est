@@ -35,9 +35,10 @@ var difficulty;
 /**
  * Funktsioon arvutiseisu tühistamiseks enne uut käiku
  */
-function reset() {
+function reset(gameDifficulty) {
     move = [];
     createdWords = [];
+    difficulty = gameDifficulty;
     if (difficulty == 0) {
         bestScore = 1000;
     } else {
@@ -51,8 +52,7 @@ function reset() {
  * Tagastab kasutatud tähed, tähtede asukohad mängulaual, käigu skoor, loodud sõnad, veateade
  */
 export function makeFirstComputerMove(gameDifficulty) {
-    difficulty = gameDifficulty;
-    reset();
+    reset(gameDifficulty);
     var err;
     try {
         leftPart('', dictionary.root, [7, 7, 7]);
@@ -85,8 +85,7 @@ export function makeFirstComputerMove(gameDifficulty) {
  * Tagastab kasutatud tähed, tähtede asukohad mängulaual, käigu skoor, loodud sõnad, veateade
  */
 export function makeComputerMove(gameDifficulty) {
-    difficulty = gameDifficulty;
-    reset();
+    reset(gameDifficulty);
     var err;
     try {
         var anchorSquares = findAnchorSquares();

@@ -62,7 +62,7 @@ export default class GameOptions extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => {
                 scene.highlight(0);
-                scene.difficulty = 0;
+                difficulty = 0;
             })
             .setOrigin(0.5);
 
@@ -71,7 +71,7 @@ export default class GameOptions extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => {
                 scene.highlight(1);
-                scene.difficulty = 1;
+                difficulty = 1;
             })
             .setOrigin(0.5);
 
@@ -80,7 +80,7 @@ export default class GameOptions extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => {
                 scene.highlight(2);
-                scene.difficulty = 2
+                difficulty = 2;
             })
             .setOrigin(0.5);
 
@@ -93,7 +93,7 @@ export default class GameOptions extends Phaser.Scene {
             .setInteractive()
             .on('pointerdown', () => {
                 theme = themeDropDownList.text;
-                if (scene.difficulty == null) {
+                if (difficulty == null) {
                     CreateDialog(scene, 'Keerukus ei ole valitud')
                         .setPosition(screenCenterX, screenCenterY)
                         .layout()
@@ -107,15 +107,14 @@ export default class GameOptions extends Phaser.Scene {
                         .layout()
                         .modalPromise({
                             manaulClose: true
-                        })
-                    ;
+                        });
                 } else {
                     this.scene.start('Game', { difficulty: difficulty, theme: theme });
                 }
             })
             .on('pointerover', () => this.playButton.setStyle({ fill: '#ddf700' }))
             .on('pointerout', () => this.playButton.setStyle({ fill: '#ffffff '}))
-            .setOrigin(0.5);;
+            .setOrigin(0.5);
     }
 
     async getThemedOptions() {

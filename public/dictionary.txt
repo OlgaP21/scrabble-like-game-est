@@ -293,6 +293,7 @@ adaptiivsed
 adekvaatne
 adekvaatsed
 adekvaatselt
+adekvaatsemalt
 adekvaatsus
 adekvaatsused
 ader
@@ -354,6 +355,7 @@ aegapidi
 aeglane
 aeglased
 aeglaselt
+aeglasemalt
 aeglus
 aeglused
 aeglustama
@@ -540,7 +542,6 @@ ahtakesed
 ahtalehine
 ahtalehis
 ahtalehised
-ahtalehised
 ahter
 ahtrad
 ahtrid
@@ -647,6 +648,8 @@ ainiti
 ainitine
 ainitised
 ainsad
+ainsam
+ainsamad
 ainsus
 ainsused
 ainu
@@ -658,7 +661,6 @@ ainuisikulised
 ainuisikuliselt
 ainuke
 ainukene
-ainukesed
 ainukesed
 ainukordne
 ainukordsed
@@ -1047,6 +1049,7 @@ aktiivmudad
 aktiivne
 aktiivsed
 aktiivselt
+aktiivsemalt
 aktiivsus
 aktiivsused
 aktiva
@@ -1193,6 +1196,8 @@ alalõualiigesed
 alalõualuu
 alalõualuud
 alalõug
+alam
+alamad
 alamametnik
 alamametnikud
 alamaste
@@ -1531,7 +1536,6 @@ alkoholivaba
 alkoholivabad
 alkoholivastane
 alkoholivastased
-alkoholivastased
 alkohoolik
 alkohoolikud
 alkohoolne
@@ -1555,7 +1559,6 @@ allakirjutajad
 allakirjutamine
 allakirjutamised
 allakirjutanu
-allakirjutanud
 allakirjutanud
 allakirjutatud
 allakukkumine
@@ -1748,7 +1751,6 @@ alus
 alusdokumendid
 alusdokument
 alused
-alused
 aluseline
 aluselised
 alusepanija
@@ -1888,7 +1890,6 @@ ametiseisundid
 ametisolek
 ametisolekud
 ametisolev
-ametisolevad
 ametisolevad
 ametivanded
 ametivanne
@@ -2123,7 +2124,6 @@ andmepangad
 andmepank
 andmepõhine
 andmepõhis
-andmepõhised
 andmepõhised
 andmeside
 andmesided
@@ -2695,7 +2695,6 @@ armastaja
 armastajad
 armastajapaar
 armastajapaarid
-armastajapaarid
 armastama
 armastamine
 armastamised
@@ -2741,6 +2740,8 @@ armsad
 armsake
 armsakesed
 armsalt
+armsam
+armsamad
 armsasti
 armuaeg
 armuajad
@@ -3022,6 +3023,7 @@ arvsõnad
 arvud
 arvukad
 arvukalt
+arvukamalt
 arvukas
 arvukus
 arvukused
@@ -3076,7 +3078,6 @@ arvutiprogramm
 arvutiprogrammid
 arvutipõhine
 arvutipõhis
-arvutipõhised
 arvutipõhised
 arvutis
 arvutisalong
@@ -4505,7 +4506,6 @@ brutopalk
 bränd
 brändi
 brändid
-brändid
 brünetid
 brünett
 budism
@@ -4861,6 +4861,7 @@ detailplaan
 detailplaanid
 detailsed
 detailselt
+detailsemalt
 detailsus
 detailsused
 detektiiv
@@ -5573,7 +5574,6 @@ ebasobiv
 ebasobivad
 ebasoodne
 ebasoodsad
-ebasoodsad
 ebasoodus
 ebasoosing
 ebasoosingud
@@ -5765,6 +5765,7 @@ edu
 edud
 edukad
 edukalt
+edukamalt
 edukas
 edukus
 edukused
@@ -5868,7 +5869,6 @@ eelkambrium
 eelkambriumid
 eelkirjeldatu
 eelkirjeldatud
-eelkirjeldatud
 eelkohastumus
 eelkohastumused
 eelkokkulepe
@@ -5891,7 +5891,6 @@ eellepingud
 eellood
 eellugu
 eelmainitu
-eelmainitud
 eelmainitud
 eelmine
 eelmised
@@ -5934,7 +5933,6 @@ eelteadmised
 eeltingimus
 eeltingimused
 eeltoodu
-eeltoodud
 eeltoodud
 eeltutvustus
 eeltutvustused
@@ -6154,6 +6152,7 @@ efektid
 efektiivne
 efektiivsed
 efektiivselt
+efektiivsemalt
 efektiivsus
 efektiivsused
 efektne
@@ -6322,6 +6321,7 @@ ekraanipinnad
 ekraanipinnud
 ekraniseering
 ekraniseeringud
+eks
 eksabikaasa
 eksabikaasad
 eksalteerima
@@ -6350,6 +6350,7 @@ eksemplarid
 eksi
 eksiarvamus
 eksiarvamused
+eksid
 eksiil
 eksiilid
 eksiilvalitsus
@@ -6913,7 +6914,6 @@ elus
 elusaatus
 elusaatused
 elusad
-elusad
 elusalt
 eluseigad
 eluseik
@@ -6934,7 +6934,6 @@ elusmassid
 elusolend
 elusolendid
 elusolev
-elusolevad
 elusolevad
 elusorganism
 elusorganismid
@@ -7056,7 +7055,6 @@ emakeelne
 emakeelsed
 emakene
 emakesed
-emakesed
 emakoda
 emakojad
 emalaev
@@ -7131,7 +7129,6 @@ emiteerimised
 emm
 emme
 emmed
-emmed
 emotsionaalne
 emotsionaalsed
 emotsionaalselt
@@ -7150,6 +7147,8 @@ empiirilised
 empiiriliselt
 emu
 emud
+enam
+enamalt
 enamasti
 enamik
 enamikud
@@ -7291,6 +7290,7 @@ enesekiitused
 enesekindel
 enesekindlad
 enesekindlalt
+enesekindlamalt
 enesekindlus
 enesekindlused
 enesekirjeldus
@@ -7387,6 +7387,8 @@ ennekuulmatud
 ennekõike
 ennelõuna
 ennelõunad
+ennem
+ennemalt
 ennemini
 ennemuistne
 ennemuistsed
@@ -7700,6 +7702,7 @@ eraülikoolid
 ere
 eredad
 eredalt
+eredamalt
 erektsioon
 erektsioonid
 erepunane
@@ -8537,7 +8540,6 @@ eurotsoon
 eurotsoonid
 eurovastane
 eurovastased
-eurovastased
 eurovisioon
 eurovisioonid
 euroühing
@@ -8994,7 +8996,6 @@ folkloristlikud
 folliikul
 folliikulid
 fond
-fondid
 fondid
 fondiemissioon
 fondiemissioonid
@@ -9535,7 +9536,6 @@ granaadiheitjad
 granaat
 grand
 grandid
-grandid
 grandioosne
 grandioossed
 grandiprojekt
@@ -9677,7 +9677,6 @@ haav
 haavaarm
 haavaarmid
 haavaarmud
-haavad
 haavad
 haavakliinik
 haavakliinikud
@@ -9988,7 +9987,6 @@ hali
 halin
 halinad
 halisema
-haljad
 haljad
 haljas
 haljasala
@@ -10400,6 +10398,7 @@ harvaesinev
 harvaesinevad
 harvanähtava
 harvanähtavad
+harvem
 harvemini
 harvendama
 harvendusraided
@@ -10460,7 +10459,6 @@ hautama
 hautis
 hautised
 havi
-havid
 havid
 hea
 head
@@ -10607,7 +10605,6 @@ hektar
 hektarid
 hektarisaagid
 hektarisaak
-helbed
 helbed
 helde
 helded
@@ -11343,6 +11340,7 @@ hoog
 hoogne
 hoogsad
 hoogsalt
+hoogsamalt
 hoogtöö
 hoogtööd
 hoogustama
@@ -11829,8 +11827,8 @@ hõlmikpuu
 hõlmikpuud
 hõlp
 hõlpsad
-hõlpsad
 hõlpsalt
+hõlpsamalt
 hõlpsamini
 hõlpsasti
 hõlpus
@@ -12737,6 +12735,7 @@ ilme
 ilmed
 ilmekad
 ilmekalt
+ilmekamalt
 ilmekas
 ilmeksimatult
 ilmestama
@@ -13465,6 +13464,7 @@ innovatsioonid
 innud
 innukad
 innukalt
+innukamalt
 innukas
 innukus
 innukused
@@ -13574,6 +13574,7 @@ intensiivravi
 intensiivravid
 intensiivsed
 intensiivselt
+intensiivsemalt
 intensiivsus
 intensiivsused
 intentsioon
@@ -13961,7 +13962,6 @@ isikuvabadus
 isikuvabadused
 isikuvastane
 isikuvastased
-isikuvastased
 islam
 islamid
 islamimaa
@@ -14092,8 +14092,10 @@ jaamahoone
 jaamahooned
 jaamaülem
 jaamaülemad
+jaan
 jaanalind
 jaanalinnud
+jaanid
 jaanilaupäev
 jaanilaupäevad
 jaanilinn
@@ -14376,6 +14378,7 @@ jamaikalased
 jamama
 jamps
 jampsid
+jampsima
 jandid
 jant
 janu
@@ -14455,7 +14458,6 @@ joobeseisund
 joobeseisundid
 joobnu
 joobnud
-joobnud
 joobuma
 jood
 joodav
@@ -14503,7 +14505,6 @@ jooksusamm
 jooksusammud
 jooksutama
 jooksva
-jooksvad
 jooksvad
 jooksvalt
 joom
@@ -14691,7 +14692,6 @@ juhtivus
 juhtivused
 juhtivvaimulik
 juhtivvaimulikud
-juhtivvaimulikud
 juhtkiri
 juhtkirjad
 juhtkoer
@@ -14761,6 +14761,8 @@ julgad
 julge
 julged
 julgelt
+julgema
+julgemalt
 julgemini
 julgeolek
 julgeolekualane
@@ -14776,7 +14778,6 @@ julgeolekuorganid
 julgeolekuvaru
 julgeolekuvarud
 julgeolekuülem
-julgeolekuülemad
 julgeolekuülemad
 julgesti
 julgestus
@@ -15148,6 +15149,7 @@ jõudnu
 jõudnud
 jõudsad
 jõudsalt
+jõudsamalt
 jõudsasti
 jõuduma
 jõudumööda
@@ -15180,6 +15182,7 @@ jõul
 jõuline
 jõulised
 jõuliselt
+jõulisemalt
 jõulisus
 jõulisused
 jõuluaeg
@@ -15277,6 +15280,7 @@ jälg
 jälgid
 jälgija
 jälgijad
+jälgima
 jälgimine
 jälgimised
 jälgimisperiood
@@ -15329,7 +15333,6 @@ jämedakoelised
 jämedalt
 jämedune
 jämedus
-jämedused
 jämedused
 jämejalad
 jämejalg
@@ -15465,6 +15468,7 @@ järjejutud
 järjekindel
 järjekindlad
 järjekindlalt
+järjekindlamalt
 järjekindlus
 järjekindlused
 järjekord
@@ -15848,7 +15852,6 @@ kaasaskäiv
 kaasaskäivad
 kaasasolev
 kaasasolevad
-kaasasolevad
 kaasasündinud
 kaasatoodud
 kaasatundev
@@ -16170,7 +16173,6 @@ kaheksandad
 kaheksandaks
 kaheksane
 kaheksapaadid
-kaheksapaadid
 kaheksapaat
 kaheksas
 kaheksasada
@@ -16363,6 +16365,7 @@ kahvatama
 kahvatu
 kahvatud
 kahvatult
+kahvatuma
 kahvatus
 kahvatused
 kahvel
@@ -16691,6 +16694,9 @@ kallidused
 kallihinnaline
 kallihinnalised
 kallilt
+kallim
+kallimad
+kallimalt
 kallinema
 kallinemine
 kallinemised
@@ -17176,7 +17182,6 @@ karbikesed
 karbon
 karbonaad
 karbonaadid
-karbonaadid
 karbonaat
 karbonaatmuld
 karbonaatmullad
@@ -17350,6 +17355,7 @@ karmid
 karmiinpunane
 karmiinpunased
 karmilt
+karmimalt
 karmistama
 karmistamine
 karmistamised
@@ -17395,7 +17401,6 @@ kartoteegikaardid
 kartoteegikaart
 kartoteek
 karts
-kartsad
 kartsad
 kartsas
 kartser
@@ -17445,7 +17450,6 @@ karupojad
 karuputk
 karuputked
 karus
-karused
 karused
 karusnahad
 karusnahk
@@ -17702,7 +17706,6 @@ kasutütar
 kasutütred
 kasuvanem
 kasuvanemad
-kasuvanemad
 kasv
 kasvaja
 kasvajad
@@ -17943,7 +17946,6 @@ katsenädal
 katsenädalad
 katsepaar
 katsepaarid
-katsepaarid
 katseperiood
 katseperioodid
 katseprojekt
@@ -18123,6 +18125,7 @@ kaudsed
 kaudselt
 kaudsemalt
 kaudu
+kauem
 kaugas
 kauge
 kauged
@@ -18135,6 +18138,9 @@ kaugeleulatuv
 kaugeleulatuvad
 kaugelt
 kaugeltki
+kaugemal
+kaugemale
+kaugemalt
 kaugenema
 kaugenemine
 kaugenemised
@@ -18213,7 +18219,6 @@ kaupmeheseisused
 kaur
 kauri
 kaurid
-kaurid
 kausaalne
 kausaalsed
 kausaalsus
@@ -18276,7 +18281,6 @@ kedriklest
 kedriklestad
 kee
 keebid
-keed
 keed
 keedis
 keedised
@@ -18559,7 +18563,6 @@ kehapinnad
 kehapinnud
 kehapool
 kehapooled
-kehapooled
 kehapoolid
 keharakid
 keharakk
@@ -18768,6 +18771,7 @@ kergekäeline
 kergekäelised
 kergekäeliselt
 kergelt
+kergemalt
 kergemeelne
 kergemeelsed
 kergemeelsus
@@ -19174,7 +19178,6 @@ kihlveokontorid
 kiht
 kihu
 kihud
-kihud
 kihutaja
 kihutajad
 kihutama
@@ -19271,7 +19274,6 @@ kiirabitöötajad
 kiirbuss
 kiirbussid
 kiire
-kiired
 kiired
 kiireloomuline
 kiireloomulised
@@ -19489,6 +19491,7 @@ kindlakujuline
 kindlakujulised
 kindlakäeliselt
 kindlalt
+kindlamalt
 kindlameelne
 kindlameelsed
 kindlameelselt
@@ -19594,7 +19597,6 @@ kinnipeetav
 kinnipeetavad
 kinnipeetu
 kinnipeetud
-kinnipeetud
 kinnipidamine
 kinnipidamised
 kinnipüüdmine
@@ -19603,7 +19605,6 @@ kinnipüütud
 kinnis
 kinnisasi
 kinnisasjad
-kinnised
 kinnised
 kinniseotud
 kinnisidee
@@ -19878,7 +19879,6 @@ kirjaoskus
 kirjaoskused
 kirjapandu
 kirjapandud
-kirjapandud
 kirjapanek
 kirjapanekud
 kirjapanemine
@@ -19968,7 +19968,6 @@ kirjutusvahend
 kirjutusvahendid
 kirka
 kirkad
-kirkad
 kirkus
 kirkused
 kirp
@@ -20046,6 +20045,7 @@ kitlid
 kits
 kitsad
 kitsalt
+kitsamalt
 kitsarinnaline
 kitsarinnalised
 kitsarinnalisus
@@ -20179,6 +20179,7 @@ kivivise
 kivivisked
 klaar
 klaarid
+klaarima
 klaarimine
 klaarimised
 klaas
@@ -20393,7 +20394,6 @@ klomp
 kloon
 kloonalune
 kloonalus
-kloonalused
 kloonalused
 kloonid
 kloonima
@@ -20952,6 +20952,7 @@ kohmetama
 kohmetu
 kohmetud
 kohmetult
+kohmetuma
 kohmetunult
 kohmetus
 kohmetused
@@ -21140,7 +21141,6 @@ kojusõit
 kojutulek
 kojutulekud
 koka
-kokad
 kokad
 kokaiin
 kokaiinid
@@ -21331,9 +21331,7 @@ kollakas
 kollakashall
 kollakashallad
 kollakashallid
-kollakashallid
 kollakaspruun
-kollakaspruunid
 kollakaspruunid
 kollakeha
 kollakehad
@@ -21589,6 +21587,7 @@ komitatiiv
 komitatiivid
 komitee
 komiteed
+komm
 komme
 kommentaar
 kommentaarid
@@ -21619,6 +21618,7 @@ kommertssüsteem
 kommertssüsteemid
 kommertstoode
 kommertstooted
+kommid
 kommikarbid
 kommikarp
 kommipaber
@@ -21841,6 +21841,7 @@ konkordantsid
 konkreetne
 konkreetsed
 konkreetselt
+konkreetsemalt
 konkreetsus
 konkreetsused
 konkretiseerima
@@ -22165,10 +22166,8 @@ koobas
 koobastik
 koobastikud
 kood
-kood
 koodeks
 koodeksid
-koodid
 koodid
 koodnimed
 koodnimi
@@ -22675,7 +22674,6 @@ kordon
 kordonid
 kordoniülem
 kordoniülemad
-kordoniülemad
 kordsed
 korduma
 kordumatu
@@ -23139,7 +23137,6 @@ krambihood
 krambihoog
 krambivastane
 krambivastased
-krambivastased
 kramp
 krampi
 krampis
@@ -23261,6 +23258,7 @@ kriitikud
 kriitiline
 kriitilised
 kriitiliselt
+kriitilisemalt
 kriitilisus
 kriitilisused
 kriminaal
@@ -23529,6 +23527,7 @@ kuivendamine
 kuivendamised
 kuivetu
 kuivetud
+kuivetuma
 kuivik
 kuivikud
 kuivlaiksus
@@ -23733,7 +23732,6 @@ kuliss
 kulissid
 kulissidetagune
 kulissidetagused
-kulissidetagused
 kulistama
 kull
 kullad
@@ -23743,7 +23741,6 @@ kullakaevandus
 kullakaevandused
 kullake
 kullakene
-kullakesed
 kullakesed
 kullamäed
 kullamägi
@@ -23907,7 +23904,6 @@ kuluaarid
 kuluartikkel
 kuluartiklid
 kulud
-kulud
 kuluefektiivsus
 kuluefektiivsused
 kulukad
@@ -23980,7 +23976,6 @@ kummatigi
 kummel
 kummelid
 kummi
-kummid
 kummid
 kummik
 kummikindad
@@ -24197,7 +24192,6 @@ kurbus
 kurbused
 kurd
 kurdid
-kurdid
 kurdistama
 kured
 kureerima
@@ -24216,7 +24210,6 @@ kurgid
 kurgikasvataja
 kurgikasvatajad
 kurgualune
-kurgualused
 kurgualused
 kurgud
 kurgumandel
@@ -24456,7 +24449,6 @@ kuudid
 kuueaastane
 kuueaastased
 kuued
-kuued
 kuuekesi
 kuuekohaline
 kuuekohalised
@@ -24638,7 +24630,6 @@ kuurortlinnad
 kuursaal
 kuursaalid
 kuus
-kuused
 kuused
 kuusehekid
 kuusehekk
@@ -25079,8 +25070,13 @@ kõrgele
 kõrgelennuline
 kõrgelennulised
 kõrgelt
+kõrgem
+kõrgemad
+kõrgemal
+kõrgemale
 kõrgemalseisev
 kõrgemalseisvad
+kõrgemalt
 kõrgend
 kõrgendama
 kõrgendid
@@ -25148,7 +25144,6 @@ kõrgtehnoloogiad
 kõrguma
 kõrgune
 kõrgus
-kõrgused
 kõrgused
 kõrgushüpe
 kõrgushüppaja
@@ -25467,7 +25462,6 @@ käibekohustused
 käibel
 käibele
 käibelolev
-käibelolevad
 käibelolevad
 käibemaks
 käibemaksud
@@ -25830,7 +25824,6 @@ käsuvõtuüksused
 kätekõverdus
 kätekõverdused
 kätepaar
-kätepaarid
 kätepaarid
 käterätid
 käterätik
@@ -26269,7 +26262,7 @@ küpressid
 küps
 küpse
 küpsed
-küpsed
+küpsema
 küpsemine
 küpsemised
 küpsetama
@@ -26390,7 +26383,6 @@ küüditamine
 küüditamised
 küüditatu
 küüditatud
-küüditatud
 küüdud
 küülik
 küülikud
@@ -26493,7 +26485,6 @@ laagriplatsud
 laam
 laama
 laamad
-laamad
 laamendama
 laaned
 laanekased
@@ -26575,7 +26566,6 @@ ladustamised
 ladvad
 ladvik
 ladvikud
-laed
 laed
 laegas
 laekad
@@ -26892,6 +26882,7 @@ laiahaardelised
 laialdane
 laialdased
 laialdaselt
+laialdasemalt
 laiali
 laialiminek
 laialiminekud
@@ -26914,6 +26905,7 @@ laibakotad
 laibakotid
 laibakott
 laid
+laiemalt
 laiend
 laiendama
 laiendamine
@@ -26987,7 +26979,6 @@ laiud
 laiuma
 laiune
 laius
-laiused
 laiused
 laiuskraad
 laiuskraadid
@@ -27427,7 +27418,6 @@ lauaveinid
 lauavõitlus
 lauavõitlused
 laud
-laud
 laudad
 laudahoone
 laudahooned
@@ -27633,6 +27623,7 @@ lebavad
 leebe
 leebed
 leebelt
+leebemalt
 leebuma
 leebus
 leebused
@@ -28056,7 +28047,6 @@ lepingupartner
 lepingupartnerid
 lepingupool
 lepingupooled
-lepingupooled
 lepingupoolid
 lepingutingimus
 lepingutingimused
@@ -28202,6 +28192,8 @@ ligased
 lige
 ligedad
 ligeerima
+ligemal
+ligemale
 ligi
 ligidad
 ligidal
@@ -28260,7 +28252,6 @@ lihaomadused
 lihas
 lihasaadus
 lihasaadused
-lihased
 lihased
 lihaseline
 lihaselised
@@ -28324,6 +28315,7 @@ lihtsad
 lihtsakoeline
 lihtsakoelised
 lihtsalt
+lihtsamalt
 lihtsameelne
 lihtsameelsed
 lihtsameelselt
@@ -29036,7 +29028,6 @@ linnugripp
 linnuke
 linnukene
 linnukesed
-linnukesed
 linnulaul
 linnulaulud
 linnulennult
@@ -29238,7 +29229,6 @@ liturgiakorrad
 liturgiline
 liturgilised
 liuad
-liud
 liud
 liug
 liuglema
@@ -29481,12 +29471,9 @@ loobumisvõit
 loobunu
 loobunud
 lood
-lood
-lood
 loodav
 loodavad
 loode
-looded
 looded
 loodeosa
 loodeosad
@@ -29753,6 +29740,7 @@ lootustandvad
 loov
 loovad
 loovalt
+loovamalt
 loovima
 loovisik
 loovisikud
@@ -30058,7 +30046,6 @@ luuavarred
 luuavars
 luubid
 luud
-luud
 luuderohi
 luuderohud
 luugid
@@ -30163,6 +30150,7 @@ lõbureisid
 lõbus
 lõbusad
 lõbusalt
+lõbusamalt
 lõbustama
 lõbustamine
 lõbustamised
@@ -30462,7 +30450,6 @@ lõpupidud
 lõpupool
 lõpupoole
 lõpupooled
-lõpupooled
 lõpupoolid
 lõpupäev
 lõpupäevad
@@ -30751,6 +30738,9 @@ lähedane
 lähedased
 lähedus
 lähedused
+lähemal
+lähemale
+lähemalt
 lähend
 lähendama
 lähendamine
@@ -30825,7 +30815,6 @@ lähkrid
 lähteaine
 lähteained
 lähtealune
-lähtealused
 lähtealused
 lähted
 lähtekivim
@@ -30974,6 +30963,7 @@ lömmis
 löristama
 lörts
 lörtsid
+lörtsima
 löss
 lössid
 lösutama
@@ -31017,6 +31007,7 @@ lööve
 löövid
 lüheldane
 lüheldased
+lühemalt
 lühend
 lühendama
 lühendamine
@@ -31198,7 +31189,6 @@ maagaas
 maagaasid
 maagia
 maagiad
-maagid
 maagid
 maagiline
 maagilised
@@ -31560,6 +31550,9 @@ madal
 madalad
 madalal
 madalalt
+madalamal
+madalamale
+madalamalt
 madalapalgaline
 madalapalgalised
 madaldama
@@ -31635,7 +31628,6 @@ magistraalvõrk
 magistraat
 magistrand
 magistrandid
-magistrandid
 magistrant
 magistrantuur
 magistrantuurid
@@ -31688,7 +31680,6 @@ mahaarvamine
 mahaarvamised
 mahaheidetud
 mahajäetu
-mahajäetud
 mahajäetud
 mahajäetus
 mahajäetused
@@ -31781,7 +31772,6 @@ mahv
 mahvid
 mai
 maia
-maiad
 maiad
 maias
 maiasmokad
@@ -32252,7 +32242,6 @@ mander
 mandid
 mandlid
 mandrid
-mandrid
 mandrijää
 mandrijääd
 mandriline
@@ -32347,7 +32336,6 @@ manööverdama
 manööverdamine
 manööverdamised
 manöövrid
-maod
 maod
 maohaavand
 maohaavandid
@@ -33761,7 +33749,6 @@ minevikuvorm
 minevikuvormid
 mingi
 mingid
-mingid
 mingisugune
 mingisugused
 mini
@@ -33776,7 +33763,6 @@ miniatuursed
 minid
 minimaalne
 minimaalpaar
-minimaalpaarid
 minimaalpaarid
 minimaalsed
 minimaalselt
@@ -34408,7 +34394,6 @@ mudelid
 mudelipõhine
 mudelipõhis
 mudelipõhised
-mudelipõhised
 mudelipüstitus
 mudelipüstitused
 mudelist
@@ -34424,6 +34409,7 @@ mugandused
 mugav
 mugavad
 mugavalt
+mugavamalt
 mugavus
 mugavused
 mugima
@@ -34516,7 +34502,6 @@ mull
 mulla
 mullaanalüüs
 mullaanalüüsid
-mullad
 mullad
 mullaharimine
 mullaharimised
@@ -34786,7 +34771,6 @@ mustjad
 mustjas
 mustjashall
 mustjashallad
-mustjashallid
 mustjashallid
 mustjõed
 mustjõgi
@@ -36368,7 +36352,6 @@ naisterahvad
 naisterahvas
 naistuttav
 naistuttavad
-naistuttavad
 naistöötaja
 naistöötajad
 naisuke
@@ -36528,6 +36511,7 @@ narratiivsed
 narratiivsus
 narratiivsused
 narrid
+narrima
 narrimine
 narrimised
 narritama
@@ -36566,7 +36550,6 @@ natslikud
 natt
 natuke
 natukene
-natukesed
 natukesed
 natukeseks
 naturaalarv
@@ -36682,7 +36665,6 @@ neitsilikkus
 neitsilikkused
 neitsilikud
 neiu
-neiud
 neiud
 neiuke
 neiukesed
@@ -37193,6 +37175,7 @@ nooreestlased
 noorelt
 nooremaealine
 nooremaealised
+nooremalt
 nooremapoolne
 nooremapoolsed
 nooreminspektor
@@ -37236,7 +37219,6 @@ noorperemehed
 noorperenaine
 noorperenaised
 noorpull
-noorpullid
 noorpullid
 noorpullud
 noorpõlv
@@ -37658,7 +37640,6 @@ nõndanimetatud
 nõndasamuti
 nõndaviisi
 nõod
-nõod
 nõre
 nõred
 nõretama
@@ -37672,6 +37653,7 @@ nõrgakasvulised
 nõrgalt
 nõrganärviline
 nõrganärvilised
+nõrgemalt
 nõrgemini
 nõrgendama
 nõrgenema
@@ -37981,7 +37963,6 @@ näopildid
 näopilt
 näopool
 näopooled
-näopooled
 näopoolid
 näotu
 näotud
@@ -38190,6 +38171,7 @@ odaliskid
 odav
 odavad
 odavalt
+odavamalt
 odavise
 odaviskaja
 odaviskajad
@@ -38450,6 +38432,7 @@ olukorrad
 oluline
 olulised
 oluliselt
+olulisemalt
 olulisus
 olulisused
 olustik
@@ -39099,7 +39082,6 @@ osavõtmatud
 osavõtmatult
 osavõtnu
 osavõtnud
-osavõtnud
 osavõtt
 osavõttev
 osavõtud
@@ -39259,6 +39241,7 @@ otseliikuv
 otseliikuvad
 otseliin
 otseliinid
+otsemaid
 otsemõju
 otsemõjud
 otsene
@@ -39268,6 +39251,7 @@ otsesaade
 otsesaated
 otsesed
 otseselt
+otsesemalt
 otsesõnu
 otsetee
 otseteed
@@ -39311,6 +39295,7 @@ otspunktid
 otstarbed
 otstarbekad
 otstarbekalt
+otstarbekamalt
 otstarbekas
 otstarbekohane
 otstarbekohased
@@ -39636,6 +39621,7 @@ pahvakas
 pahvakud
 pahvatama
 pahvid
+pahvima
 pai
 paid
 paigad
@@ -39697,6 +39683,7 @@ paindlikkus
 paindlikkused
 paindlikud
 paindlikult
+paindlikumalt
 painduma
 paindumatu
 paindumatud
@@ -39817,7 +39804,6 @@ paksud
 paksult
 paksune
 paksus
-paksused
 paksused
 paksuseinaline
 paksuseinalised
@@ -40245,7 +40231,6 @@ papagoi
 papagoid
 papi
 papid
-papid
 paplid
 paplilehed
 paplileht
@@ -40363,6 +40348,10 @@ pardipojad
 pareerima
 parees
 pareesid
+parem
+paremal
+paremale
+paremalt
 paremerakond
 paremerakonnad
 paremik
@@ -40702,7 +40691,6 @@ peaassamblee
 peaassambleed
 peaauhind
 peaauhinnad
-pead
 pead
 peadiagonaal
 peadiagonaalid
@@ -41106,6 +41094,7 @@ pehkima
 pehme
 pehmed
 pehmelt
+pehmemalt
 pehmendama
 pehmendamine
 pehmendamised
@@ -41244,7 +41233,6 @@ pentagrammid
 pentsik
 pentsikud
 peo
-peod
 peod
 peoking
 peokingad
@@ -41623,7 +41611,6 @@ pigistavad
 pigmendid
 pigment
 pihad
-pihad
 pihid
 pihiisa
 pihiisad
@@ -41965,6 +41952,8 @@ pikatoimeline
 pikatoimelised
 pikemaajaline
 pikemaajalised
+pikemalt
+pikemata
 pikendama
 pikendamine
 pikendamised
@@ -41998,7 +41987,6 @@ pikksilm
 pikksilmad
 pikkune
 pikkus
-pikkused
 pikkused
 pikkuselt
 pikkuskasv
@@ -42290,7 +42278,6 @@ pisik
 pisike
 pisikene
 pisikesed
-pisikesed
 pisikud
 pisipoeg
 pisipojad
@@ -42543,7 +42530,6 @@ plusskraad
 plusskraadid
 plusspool
 plusspooled
-plusspooled
 plusspoolid
 plusspunkt
 plusspunktid
@@ -42624,7 +42610,6 @@ pointid
 poisid
 poisike
 poisikene
-poisikesed
 poisikesed
 poisikeselik
 poisikeselikud
@@ -42894,7 +42879,6 @@ pooleldi
 pooleli
 pooleliitrine
 pooleliitrised
-pooleliitrised
 poolelijäänud
 pooleliolev
 pooleliolevad
@@ -43103,6 +43087,7 @@ poseerimised
 positiivne
 positiivsed
 positiivselt
+positiivsemalt
 positiivsus
 positiivsused
 positivism
@@ -43326,7 +43311,6 @@ presidendid
 presidendiloss
 presidendilossid
 presidendipaar
-presidendipaarid
 presidendipaarid
 presidendipalee
 presidendipaleed
@@ -44464,7 +44448,6 @@ putuktoiduline
 putuktoidulised
 puu
 puud
-puud
 puudad
 puude
 puuded
@@ -44807,7 +44790,6 @@ põhiseadused
 põhiseaduslik
 põhiseaduslikud
 põhised
-põhised
 põhiseisukohad
 põhiseisukoht
 põhisisu
@@ -44910,6 +44892,7 @@ põhjalikkus
 põhjalikkused
 põhjalikud
 põhjalikult
+põhjalikumalt
 põhjama
 põhjamaa
 põhjamaad
@@ -45136,7 +45119,6 @@ põllutööriist
 põllutööriistad
 põlud
 põlv
-põlved
 põlved
 põlvekõrgune
 põlvekõrgused
@@ -45372,7 +45354,6 @@ päi
 päike
 päikene
 päikesed
-päikesed
 päikeseenergia
 päikeseenergiad
 päikeseketas
@@ -45419,7 +45400,6 @@ päikseprill
 päikseprillid
 päine
 päis
-päised
 päised
 päits
 päitsid
@@ -45581,7 +45561,6 @@ pääsema
 pääsemine
 pääsemised
 pääsenu
-pääsenud
 pääsenud
 pääsetee
 pääseteed
@@ -45881,7 +45860,6 @@ pütid
 pütt
 püü
 püüd
-püüd
 püüded
 püüdev
 püüdja
@@ -45917,7 +45895,6 @@ püüton
 püütonid
 püüud
 raa
-raad
 raad
 raadama
 raadid
@@ -46254,6 +46231,7 @@ rahulikkus
 rahulikkused
 rahulikud
 rahulikult
+rahulikumalt
 rahulolematu
 rahulolematud
 rahulolematult
@@ -46697,6 +46675,7 @@ randveri
 range
 ranged
 rangelt
+rangemalt
 rangluu
 rangluud
 rangus
@@ -46807,6 +46786,7 @@ raskekaalud
 raskekujuline
 raskekujulised
 raskelt
+raskemalt
 raskemetall
 raskemetallid
 raskemini
@@ -46822,7 +46802,6 @@ raskune
 raskus
 raskusaste
 raskusastmed
-raskused
 raskused
 raskusjõud
 raskuskese
@@ -46981,6 +46960,7 @@ raugaiga
 rauge
 rauged
 raugelt
+raugema
 raugemine
 raugemised
 raugus
@@ -47274,7 +47254,6 @@ reegel
 reeglid
 reeglipõhine
 reeglipõhis
-reeglipõhised
 reeglipõhised
 reeglipärane
 reeglipärased
@@ -47983,6 +47962,8 @@ riietusese
 riietusesemed
 riietusruum
 riietusruumid
+riigialam
+riigialamad
 riigiamet
 riigiametid
 riigiametnik
@@ -48417,14 +48398,12 @@ ristamine
 ristamised
 ristamisvanem
 ristamisvanemad
-ristamisvanemad
 ristand
 ristandid
 ristandmesilane
 ristandmesilased
 riste
 risti
-ristid
 ristid
 ristiema
 ristiemad
@@ -48554,7 +48533,6 @@ rohekad
 rohekas
 rohekashall
 rohekashallad
-rohekashallid
 rohekashallid
 roheline
 rohelised
@@ -48702,7 +48680,6 @@ ronk
 ront
 roobas
 roobid
-rood
 rood
 roodud
 roog
@@ -49224,7 +49201,6 @@ rühmasisesed
 rühmatöö
 rühmatööd
 rühmavanem
-rühmavanemad
 rühmavanemad
 rühmaülem
 rühmaülemad
@@ -50647,6 +50623,7 @@ selged
 selgelt
 selgeltnägija
 selgeltnägijad
+selgemalt
 selgemini
 selgepiiriline
 selgepiirilised
@@ -51487,7 +51464,6 @@ sinakas
 sinakashall
 sinakashallad
 sinakashallid
-sinakashallid
 sinatama
 sinatamine
 sinatamised
@@ -51581,6 +51557,9 @@ sirge
 sirged
 sirgeldama
 sirgelt
+sirgemaks
+sirgemaksad
+sirgemaksud
 sirgjoon
 sirgjooned
 sirgjooneline
@@ -51789,7 +51768,6 @@ sisseastujad
 sisseastumine
 sisseastumised
 sisseehitatu
-sisseehitatud
 sisseehitatud
 sisseelamine
 sisseelamised
@@ -52198,10 +52176,8 @@ sonnud
 soo
 sooalune
 sooalused
-sooalused
 soobel
 sooblid
-sood
 sood
 sooda
 soodad
@@ -52209,8 +52185,8 @@ soodne
 soodom
 soodomad
 soodsad
-soodsad
 soodsalt
+soodsamalt
 soodumus
 soodumused
 soodus
@@ -52409,7 +52385,6 @@ soovitav
 soovitavad
 soovitavalt
 soovitu
-soovitud
 soovitud
 soovitus
 soovitused
@@ -53564,7 +53539,6 @@ surnu
 surnuaed
 surnuaiad
 surnud
-surnud
 surnukeha
 surnukehad
 surnukuur
@@ -53816,7 +53790,6 @@ suurtükivägi
 suurtükk
 suurune
 suurus
-suurused
 suurused
 suuruselt
 suurusjärgud
@@ -54194,7 +54167,6 @@ sõjatribunalid
 sõjavang
 sõjavangid
 sõjavastane
-sõjavastased
 sõjavastased
 sõjaveteran
 sõjaveteranid
@@ -54641,7 +54613,6 @@ sööde
 söödid
 söödu
 söödud
-söödud
 söögiaeg
 söögiajad
 söögid
@@ -54801,6 +54772,7 @@ sügavale
 sügavallapanu
 sügavallapanud
 sügavalt
+sügavamalt
 sügavasti
 sügavik
 sügavikud
@@ -54817,7 +54789,6 @@ sügavsinine
 sügavsinised
 sügavune
 sügavus
-sügavused
 sügavused
 sügavuspunkt
 sügavuspunktid
@@ -54901,7 +54872,6 @@ sümboliline
 sümbolilised
 sümbolipaar
 sümbolipaarid
-sümbolipaarid
 sümboliseerima
 sümbolism
 sümbolismid
@@ -54941,13 +54911,13 @@ sünagoog
 sünagoogid
 sünantroopne
 sünantroopsed
+sünd
 sündima
 sündimine
 sündimised
 sündimus
 sündimused
 sündinu
-sündinud
 sündinud
 sündiv
 sündivad
@@ -54989,6 +54959,7 @@ sünniaastapäev
 sünniaastapäevad
 sünniaeg
 sünniajad
+sünnid
 sünnieelne
 sünnieelsed
 sünnieelselt
@@ -56183,7 +56154,6 @@ talveaeg
 talveaiad
 talveajad
 talved
-talved
 talvehommik
 talvehommikud
 talveilm
@@ -57163,7 +57133,6 @@ teepinnad
 teepinnud
 teepool
 teepooled
-teepooled
 teepoolid
 teerada
 teerajad
@@ -57423,7 +57392,6 @@ tehtav
 tehtavad
 tehted
 tehtu
-tehtud
 tehtud
 teibad
 teie
@@ -57819,7 +57787,6 @@ tenorid
 tentsik
 tentsikud
 teod
-teod
 teoinimene
 teoinimesed
 teokarbid
@@ -57908,11 +57875,12 @@ teras
 terasaagid
 terasaak
 terased
-terased
 teraselt
+terasemalt
 terav
 teravad
 teravalt
+teravamalt
 teravatipuline
 teravatipulised
 teravdama
@@ -58100,6 +58068,7 @@ tervislikkus
 tervislikkused
 tervislikud
 tervislikult
+tervislikumalt
 tervist
 tervistav
 tervistavad
@@ -58177,6 +58146,7 @@ tihased
 tihe
 tihedad
 tihedalt
+tihedamalt
 tihedamini
 tihedasti
 tihedus
@@ -58377,7 +58347,6 @@ tipnema
 tipp
 tippaeg
 tippaja
-tippajad
 tippajad
 tippametnik
 tippametnikud
@@ -59064,7 +59033,6 @@ topeltstandard
 topeltstandardid
 topelttoll
 topelttollid
-topid
 topid
 topis
 topised
@@ -59814,6 +59782,7 @@ tugevad
 tugevakasvuline
 tugevakasvulised
 tugevalt
+tugevamalt
 tugevamini
 tugevasti
 tugevatoimeline
@@ -59830,7 +59799,6 @@ tugevnev
 tugevnevad
 tugevune
 tugevus
-tugevused
 tugevused
 tugevusvaru
 tugevusvarud
@@ -59981,7 +59949,6 @@ tulek
 tulekahi
 tulekahju
 tulekahjud
-tulekahjud
 tulekeel
 tulekeeled
 tulekera
@@ -60129,7 +60096,6 @@ tullid
 tulnu
 tulnud
 tulnuk
-tulnukad
 tulnukad
 tulnukas
 tulp
@@ -60348,7 +60314,6 @@ tuntav
 tuntavad
 tuntavalt
 tuntu
-tuntud
 tuntud
 tuntus
 tuntused
@@ -60741,7 +60706,6 @@ tõdema
 tõdemus
 tõdemused
 tõed
-tõed
 tõekspidamine
 tõekspidamised
 tõelevastavus
@@ -60781,13 +60745,13 @@ tõendusmaterjalid
 tõenduspõhine
 tõenduspõhis
 tõenduspõhised
-tõenduspõhised
 tõendusvahend
 tõendusvahendid
 tõene
 tõenäoline
 tõenäolised
 tõenäoliselt
+tõenäolisemalt
 tõenäone
 tõenäosed
 tõenäoselt
@@ -60840,6 +60804,7 @@ tõhud
 tõhus
 tõhusad
 tõhusalt
+tõhusamalt
 tõhustama
 tõhustamine
 tõhustamised
@@ -61004,6 +60969,7 @@ tõsised
 tõsiselt
 tõsiseltvõetav
 tõsiseltvõetavad
+tõsisemalt
 tõsiusklik
 tõsiusklikud
 tõstatama
@@ -61165,7 +61131,6 @@ tähetunnid
 tähine
 tähis
 tähised
-tähised
 tähistaevad
 tähistaevas
 tähistaja
@@ -61287,7 +61252,6 @@ täisjõud
 täiskarsklane
 täiskarsklased
 täiskasvanu
-täiskasvanud
 täiskasvanud
 täiskasvanuead
 täiskasvanuiga
@@ -61506,6 +61470,7 @@ täppisteadus
 täppisteadused
 täpsed
 täpselt
+täpsemalt
 täpsemini
 täpsus
 täpsused
@@ -61699,9 +61664,7 @@ töölisliikumine
 töölisliikumised
 töölisnoor
 töölisnoored
-töölisnoored
 töölisvanem
-töölisvanemad
 töölisvanemad
 töölkäimine
 töölkäimised
@@ -62163,7 +62126,6 @@ tüükad
 tüün
 tüüne
 tüüned
-tüüned
 tüüp
 tüüpiline
 tüüpilised
@@ -62199,7 +62161,6 @@ udarad
 udarapõletik
 udarapõletikud
 udaraveerand
-udaraveerandid
 udaraveerandid
 ude
 udemed
@@ -62243,7 +62204,6 @@ uhkustama
 uhtma
 uhtuma
 ui
-uid
 uid
 uiguur
 uiguurid
@@ -62361,6 +62321,7 @@ ulatused
 ulatuslik
 ulatuslikud
 ulatuslikult
+ulatuslikumalt
 ulatuv
 ulatuvad
 ulg
@@ -62928,7 +62889,6 @@ uurimustööd
 uuring
 uuringualune
 uuringualused
-uuringualused
 uuringud
 uuringudisain
 uuringudisainid
@@ -62988,7 +62948,6 @@ uusrikkad
 uustrükid
 uustrükk
 uustulnuk
-uustulnukad
 uustulnukad
 uustulnukas
 uusversioon
@@ -63159,6 +63118,7 @@ vabakutselised
 vabalinn
 vabalinnad
 vabalt
+vabamalt
 vabameelne
 vabameelsed
 vabameelsus
@@ -63500,6 +63460,8 @@ vahetud
 vahetulemus
 vahetulemused
 vahetult
+vahetuma
+vahetumalt
 vahetumine
 vahetumised
 vahetund
@@ -63612,6 +63574,7 @@ vaikivad
 vaikne
 vaiksed
 vaikselt
+vaiksemalt
 vaikus
 vaikused
 vaim
@@ -64016,11 +63979,11 @@ valitsusväline
 valitsusvälised
 valitu
 valitud
-valitud
 valitus
 valitused
 valiv
 valivad
+valjemalt
 valjemini
 valjenema
 valjud
@@ -64040,7 +64003,6 @@ valkjad
 valkjas
 valkjashall
 valkjashallad
-valkjashallid
 valkjashallid
 vall
 valla
@@ -64126,11 +64088,11 @@ vallutusretk
 vallutusretked
 valm
 valmid
-valmid
 valmidus
 valmidused
 valmik
 valmikud
+valmima
 valmimine
 valmimisaeg
 valmimisajad
@@ -64189,6 +64151,7 @@ valurahad
 valus
 valusad
 valusalt
+valusamalt
 valusamini
 valusasti
 valusündroom
@@ -64409,6 +64372,8 @@ vandetõotused
 vanduma
 vandumine
 vandumised
+vanem
+vanemad
 vanemaealine
 vanemaealised
 vanemahüvitis
@@ -64499,7 +64464,6 @@ vanuseaste
 vanuseasted
 vanuseastmed
 vanused
-vanused
 vanusegrupid
 vanusegrupp
 vanuseklass
@@ -64524,7 +64488,6 @@ vanusrühm
 vanusrühmad
 vaod
 vaoshoitu
-vaoshoitud
 vaoshoitud
 vaoshoitus
 vaoshoitused
@@ -64585,6 +64548,7 @@ varanduslikud
 varane
 varas
 varased
+varasemalt
 varastama
 varastamine
 varastamised
@@ -64604,7 +64568,6 @@ varavalmivus
 varavalmivused
 varavastane
 varavastased
-varavastased
 varb
 varbad
 varbaküüned
@@ -64618,6 +64581,8 @@ vardja
 vardjad
 vare
 vared
+varem
+varemalt
 varemed
 vares
 varesed
@@ -64715,7 +64680,6 @@ varjunimi
 varjupaigad
 varjupaik
 varjupool
-varjupooled
 varjupooled
 varjupoolid
 varjus
@@ -64841,7 +64805,6 @@ vastandlikkused
 vastandlikud
 vastandpaar
 vastandpaarid
-vastandpaarid
 vastanduma
 vastandumine
 vastandumised
@@ -64920,7 +64883,6 @@ vastloodud
 vastne
 vastsed
 vastsündinu
-vastsündinud
 vastsündinud
 vastsündinuead
 vastsündinuiga
@@ -65176,7 +65138,6 @@ veebileht
 veebipõhine
 veebipõhis
 veebipõhised
-veebipõhised
 veebirakendus
 veebirakendused
 veebisaidid
@@ -65326,7 +65287,6 @@ veerpalud
 veersalu
 veersalud
 veerud
-veerud
 veesaar
 veesaared
 veesilm
@@ -65401,7 +65361,6 @@ veidi
 veidike
 veidikene
 veidikesed
-veidikesed
 veidrad
 veidralt
 veidrik
@@ -65454,7 +65413,6 @@ vektorväli
 vektorväljad
 velg
 veli
-veljed
 veljed
 velleke
 vellekesed
@@ -65883,7 +65841,6 @@ vigurdama
 vigurid
 viha
 vihad
-vihad
 vihahood
 vihahoog
 vihalemm
@@ -66061,7 +66018,6 @@ viimased
 viimati
 viimatimainitu
 viimatimainitud
-viimatimainitud
 viimatine
 viimatinimetatu
 viimatinimetatud
@@ -66126,7 +66082,6 @@ viirusetõrje
 viirusetõrjed
 viirusevastane
 viirusevastased
-viirusevastased
 viirushaigus
 viirushaigused
 viirushepatiidid
@@ -66144,6 +66099,7 @@ viisaastakud
 viisad
 viisakad
 viisakalt
+viisakamalt
 viisakas
 viisakus
 viisakused
@@ -66222,6 +66178,7 @@ vikerkaarevärv
 vikerkaarevärvid
 viks
 viksid
+viksima
 viktoriin
 viktoriinid
 viktoriinlaps
@@ -66307,7 +66264,6 @@ viljelemine
 viljelemised
 vilka
 vilkad
-vilkad
 vilkalt
 vilksama
 vilksamisi
@@ -66322,7 +66278,6 @@ vilkuv
 vilkuvad
 vill
 villa
-villad
 villad
 villand
 villane
@@ -66924,6 +66879,7 @@ võimlemisvahend
 võimlemisvahendid
 võimsad
 võimsalt
+võimsamalt
 võimsus
 võimsused
 võimsustarbed
@@ -66953,7 +66909,6 @@ võimuliit
 võimulolek
 võimulolekud
 võimulolev
-võimulolevad
 võimulolevad
 võimulolija
 võimulolijad
@@ -67114,6 +67069,7 @@ võltsid
 võltsija
 võltsijad
 võltsilt
+võltsima
 võltsimine
 võltsimised
 võltsing
@@ -67319,7 +67275,6 @@ võtmeküsimus
 võtmeküsimused
 võtmepaar
 võtmepaarid
-võtmepaarid
 võtmepositsioon
 võtmepositsioonid
 võtmeroll
@@ -67476,7 +67431,6 @@ väeüksus
 väeüksused
 väeülem
 väeülemad
-väeülemad
 väga
 vägev
 vägevad
@@ -67526,6 +67480,8 @@ vähekesed
 väheks
 väheldane
 väheldased
+vähem
+vähemalt
 vähemasti
 vähemedukad
 vähemedukas
@@ -67565,7 +67521,6 @@ vähesed
 vähesus
 vähesused
 vähetuntu
-vähetuntud
 vähetuntud
 vähetõenäoline
 vähetõenäolised
@@ -67652,7 +67607,6 @@ väikesaar
 väikesaared
 väikesearvuline
 väikesearvulised
-väikesed
 väikesed
 väikesemahuline
 väikesemahulised
@@ -67947,7 +67901,6 @@ väljakuperemees
 väljakuperemehed
 väljakupool
 väljakupooled
-väljakupooled
 väljakupoolid
 väljakutse
 väljakutsed
@@ -68005,7 +67958,6 @@ väljapakkumine
 väljapakkumised
 väljapakutu
 väljapakutud
-väljapakutud
 väljapanek
 väljapanekud
 väljapeetud
@@ -68014,7 +67966,6 @@ väljapetmine
 väljapetmised
 väljapool
 väljapoole
-väljapooled
 väljapooled
 väljapoolid
 väljapressija
@@ -68098,7 +68049,6 @@ väljavahetamised
 väljavalimine
 väljavalimised
 väljavalitu
-väljavalitud
 väljavalitud
 väljavedu
 väljaveninud
@@ -68383,6 +68333,7 @@ väänlevad
 väär
 väärad
 vääralt
+väärama
 vääramatu
 vääramatud
 vääramatult
@@ -68427,7 +68378,6 @@ väärt
 väärtarvitamine
 väärtarvitamised
 väärtegu
-väärteod
 väärteod
 väärteomenetlus
 väärteomenetlused
@@ -68511,7 +68461,6 @@ vürtsitama
 õed
 õeke
 õekene
-õekesed
 õekesed
 õel
 õelad
@@ -69388,6 +69337,7 @@ vürtsitama
 äge
 ägedad
 ägedalt
+ägedamalt
 ägedasti
 ägedus
 ägedused
@@ -69661,7 +69611,6 @@ vürtsitama
 äriplaanid
 äripool
 äripooled
-äripooled
 äripoolid
 äriprojekt
 äriprojektid
@@ -69792,7 +69741,6 @@ vürtsitama
 öeldistäide
 öeldistäited
 öeldu
-öeldud
 öeldud
 öine
 öised
@@ -70229,6 +70177,7 @@ vürtsitama
 ühtlane
 ühtlased
 ühtlaselt
+ühtlasemalt
 ühtlasi
 ühtlikkus
 ühtlikkused
@@ -70311,7 +70260,6 @@ vürtsitama
 üksikud
 üksikult
 üksikvanem
-üksikvanemad
 üksikvanemad
 üksiküritaja
 üksiküritajad
@@ -70442,6 +70390,7 @@ vürtsitama
 üldiseloomustus
 üldiseloomustused
 üldiselt
+üldisemalt
 üldistama
 üldistamine
 üldistamised
@@ -70624,7 +70573,6 @@ vürtsitama
 ülejääk
 ülejäänu
 ülejäänud
-ülejäänud
 ülejääv
 ülejäävad
 ülekaal
@@ -70692,11 +70640,13 @@ vürtsitama
 üleloomulikud
 ülelugemine
 ülelugemised
+ülem
 ülemaailmne
 ülemaailmsed
 ülemaailmselt
 ülemaaline
 ülemaalised
+ülemad
 ülemarst
 ülemarstid
 ülemdomeen
@@ -70973,6 +70923,7 @@ vürtsitama
 ülikõrged
 ülimadal
 ülimadalad
+ülimalt
 ülimoodne
 ülimoodsad
 ülimuslik
