@@ -200,6 +200,9 @@ export default class Game extends Phaser.Scene {
             }
             var message = `Mängija käik: ${words.join(', ')}\nPunkte kogutud ${score}`;
             this.updateInfoPanel(message);
+            for (var px in this.playerRack) {
+                this.playerRack[px].data = null;
+            }
             this.playerRack = [];
             this.showPlayerRack();
             this.playerMoves.push(0);

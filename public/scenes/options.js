@@ -62,9 +62,9 @@ export default class Options extends Phaser.Scene {
                 scene.plugins.get('rexfilechooserplugin').open({ accept: '.txt' })
                     .then(function (result) {
                         var files = result.files;
-                        if (files.length) {
+                        if (files.length !== 0) {
                             var regex = /^[abcdefghijklmnopqrsšzžtuvwõäöüxy]+$/;
-                            if (Math.round(files[0].size/1024) > 0.01) {
+                            if (Math.round(files[0].size/1024) > 1) {
                                 CreateDialog(scene, 'Fail on liiga suur')
                                     .setPosition(screenCenterX, screenCenterY)
                                     .layout()
@@ -86,8 +86,7 @@ export default class Options extends Phaser.Scene {
                                         manaulClose: true
                                     });
                             } else {
-                                uploadText.text = 'Laetud fail: ' + files[0].name;
-                                var file = files[0];
+                                uploadText.text = 'Faili valideerimine...';
                                 var fileChooser = scene.add.rexFileChooser({ accept: '.txt' });
                                 fileChooser.loadFilePromise(files[0], 'text', 'theme').then(function (content) {
                                     var data = files[0].name + '\n' + content;
