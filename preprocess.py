@@ -8,6 +8,7 @@ morph_analyzer = VabamorfAnalyzer(guess=False, propername=False)
 words = set()
 
 
+# Funktsioon üldise kontrolli jaoks (sõna pikkus, tähed)
 def checkWordGeneral(word):
     if len(word) > 15:
         return False
@@ -16,6 +17,7 @@ def checkWordGeneral(word):
             return False
     return True
 
+# Funktsioon sõnade kontrollimiseks (sõnavormi ja sõnaliigi abil)
 def checkWord(word):
     text = Text(word)
     text.tag_layer(['words', 'sentences'])
@@ -48,6 +50,7 @@ def checkWord(word):
                 return True
         return False
 
+# Funktsioon sõnadele mitmuse nimetava käände genereerimiseks
 def generatePlural(word):
     text = Text(word)
     text.tag_layer(['words', 'sentences'])
@@ -80,9 +83,9 @@ with open('lemma_alfabeetilises.txt', 'r', encoding='utf-8-sig') as file:
         words.add(word)
         generatePlural(word)
 
-locale.setlocale(locale.LC_ALL, "")
-
+# Sõnastiku sorteerimine alfabeetilises järjestuses
 content = list(words)
+locale.setlocale(locale.LC_ALL, "")
 content.sort(key=locale.strxfrm)
 
 with open('dictionary.txt', 'w', encoding='utf-8') as file:

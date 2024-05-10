@@ -59,6 +59,9 @@ app.post('/upload', (req, res) => {
     });
 });
 
+/**
+ * Funktsioon kasutaja üles laetud sõnastiku valideerimiseks
+ */
 async function checkDictionary(data) {
     data = data.toLowerCase();
     var delimiters = [' ', '\n', ','];
@@ -69,8 +72,8 @@ async function checkDictionary(data) {
     var result = '';
     for (var i = 1; i < words.length; i++) {
         var word = words[i];
-        var wordInfo = await fetch(`https://www.filosoft.ee/html_morf_et/html_morf.cgi?doc=${encodeURIComponent(word)}`).then(res => res.text());;
-        var legal = !wordInfo.includes('####') && (wordInfo.includes('sg&nbsp;n') || wordInfo.includes('pl&nbsp;n'));
+        var wordInfo = await fetch(`https://www.filosoft.ee/html_morf_et/html_morf.cgi?doc=${encodeURIComponent(word)}`).then(res => res.text());
+        var legal = !wordInfo.includes('####') && (wordInfo.includes('sg&nbsp;n') || wordInfo.includes('pl&nbsp;n') || wordInfo.includes('_V_&nbsp;ma'));
         if (word.length < 16 && legal) {
             result += word + '\n';
         }
@@ -78,6 +81,9 @@ async function checkDictionary(data) {
     return result;
 }
 
+/**
+ * Funktsioon kontrollimiseks, kas kasutaja üles laetud sõnastiku nimi on juba olemas
+ */
 function dictionaryExists(name) {
     const dictionaryFolder = path.resolve(__dirname, 'public/dictionaries/');
     var files = fs.readdirSync(dictionaryFolder);
