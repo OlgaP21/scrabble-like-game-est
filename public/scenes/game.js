@@ -150,13 +150,11 @@ export default class Game extends Phaser.Scene {
     showPlayerRack() {
         for (var i = 0; i < playerRack.length; i++) {
             var letter = playerRack[i];
-            var l = this.add.image(15, 15, letter);
-            var s = this.add.image(15, 15, scores[letter]);
-            var container = this.add.container(0, i*60+60, [ l, s ]);
-            container.setSize(40, 40);
-            container.setInteractive({ draggable: true });
-            if (letter == '?') container.data = '?';
-            this.playerRack.push(container);
+            var l = this.add.image(0, i*60+60, letter);
+            l.setOrigin(0, 0);
+            l.setInteractive({ draggable: true });
+            if (letter == '?') l.data = '?';
+            this.playerRack.push(l);
         }
         //this.physics.add.collider(this.playerRack);
     }
@@ -166,7 +164,7 @@ export default class Game extends Phaser.Scene {
      */
     showComputerRack() {
         for (var i = 0; i < computerRack.length; i++) {
-            var letter = this.physics.add.sprite(555, i*60+75, '?');
+            var letter = this.physics.add.sprite(555, i*60+75, 'blank');
             this.computerRack.push(letter);
         }
     }
@@ -299,15 +297,12 @@ export default class Game extends Phaser.Scene {
         this.computerScoreText.text = 'Arvuti punktid: ' + this.computerScore;
         for (var i = 0; i < usedLetters.length; i++) {
             var letter = usedLetters[i];
-            var l = this.add.image(0, 0, letter.toLowerCase());
-            var s;
+            var l;
             if (letter == letter.toUpperCase()) {
-                s = this.add.image(0, 0, '0');
+                l = this.add.image(indexes[i][0], indexes[i][1], letter.toLowerCase()+'_0');
             } else {
-                s = this.add.image(0, 0, scores[letter]);
+                l = this.add.image(indexes[i][0], indexes[i][1], letter.toLowerCase());
             }
-            var container = this.add.container(indexes[i][0], indexes[i][1], [ l, s ]);
-            container.setSize(30, 30);
         }
         for (var i = 0; i < this.computerRack.length; i++) {
             this.computerRack[i].destroy(true);
@@ -670,7 +665,7 @@ var createChooseBlankDialog = function (scene, index) {
         .modalPromise()
         .then(function (data) {
             scene.playerRack[index].data = data.value;
-            scene.playerRack[index].list[0].setTexture(data.value.toLowerCase());
+            scene.playerRack[index].setTexture(data.value.toLowerCase()+'_0');
         });
     scene.plugins.get('rexanchorplugin').add(dialog, {
         centerX: 'center'
