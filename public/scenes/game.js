@@ -86,6 +86,13 @@ export default class Game extends Phaser.Scene {
             .on('pointerdown', () => this.playerMove(scene))
             .on('pointerover', () => this.readyButton.setStyle({ fill: '#ffd700' }))
             .on('pointerout', () => this.readyButton.setStyle({ fill: '#ffffff'}));
+        
+        this.returnLettersButton = this.add.text(150, 600, 'Tähed tagasi', this.buttonStyle)
+            .setPadding(10)
+            .setInteractive()
+            .on('pointerdown', () => this.returnLetters(scene))
+            .on('pointerover', () => this.returnLettersButton.setStyle({ fill: '#ffd700' }))
+            .on('pointerout', () => this.returnLettersButton.setStyle({ fill: '#ffffff'}));
 
         this.exitButton = this.add.text(685, 550, 'Lõpeta mäng', this.buttonStyle)
             .setPadding(10)
@@ -242,6 +249,18 @@ export default class Game extends Phaser.Scene {
      */
     exchangePlayerLetters() {
         var dialog = CreateChangeLettersDialog(this);
+    }
+
+    /**
+     * Funktsioon mängija tähtede mängulaualt ära viimiseks
+     */
+    returnLetters(scene) {
+        for (var i = 0; i < this.playerRack.length; i++) {
+            this.playerRack[i].data = null;
+            this.playerRack[i].destroy(true);
+        }
+        this.playerRack = [];
+        this.showPlayerRack();
     }
 
     /**

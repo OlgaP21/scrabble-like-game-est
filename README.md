@@ -18,3 +18,5 @@ Mängu käivitamiseks on vaja:
   - avada veebileht aadressil http://localhost:8081/ .
 
 See avab veebilehitsejas Scrabble mängu.
+
+Mängida saab ka veebiaadressil https://play-scrabblest.web.app/ .
